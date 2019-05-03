@@ -1,0 +1,111 @@
+<ion-header transparent>
+     <ion-navbar color="appheader" align-title="center" hideBackButton="true">
+    <ion-title> Result
+    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-buttons  end>
+    <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+    </ion-buttons>
+     </ion-navbar>
+</ion-header> 
+
+<ion-content overflow-scroll="false">
+                <h2> Final Score: {{score}}/{{this.quiz_answers_quiz.length}}</h2>
+     
+     <ion-list no-lines radio-group [(ngModel)]="x.checked" *ngFor= "let x of quiz_answers_quiz">  
+ <ion-card>    
+<ion-item text-wrap id="ioncad">
+     
+    <p> {{x.q_no}} . {{x.questions}}</p>
+    <p> </p><br/>
+     
+    <p id="ans"> Answer:{{x.answer}} </p> 
+      
+</ion-item>
+
+
+
+<ion-item>
+      <ion-radio *ngIf="x.option1.checked" item-left value={{x.option1}} disabled="false"></ion-radio>   
+      <ion-label *ngIf="x.answer == x.option1">A. {{x.option1}}
+              <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"> </ion-icon>
+     </ion-label>   
+
+        <ion-label *ngIf="(x.answer !== x.option1 && x.checked == x.option1)">A. {{x.option1}} 
+              <ion-icon ios="ios-close-circle" md="md-close-circle"> </ion-icon>              
+        </ion-label>    
+
+       <ion-label *ngIf="(x.answer !== x.option1 && x.checked !== x.option1)">A. {{x.option1}} </ion-label>    
+</ion-item>
+
+
+
+<ion-item>
+      <ion-radio *ngIf="x.option2.checked" item-left value={{x.option2}} disabled="false"></ion-radio>   
+ 
+        <ion-label *ngIf="x.answer == x.option2">B. {{x.option2}}
+              <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"> </ion-icon>
+        </ion-label>    
+
+        <ion-label *ngIf="(x.answer !== x.option2 && x.checked == x.option2)">B. {{x.option2}} 
+              <ion-icon ios="ios-close-circle" md="md-close-circle"> </ion-icon>              
+        </ion-label>    
+
+        <ion-label *ngIf="(x.answer !== x.option2 && x.checked !== x.option2)">B. {{x.option2}} </ion-label>    
+
+</ion-item>
+
+
+
+<ion-item>
+
+              <ion-radio *ngIf="x.option3.checked" item-left value={{x.option3}} disabled="false"></ion-radio>   
+
+        <ion-label *ngIf="x.answer == x.option3">C. {{x.option3}}
+              <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"> </ion-icon>
+        </ion-label>    
+
+        <ion-label *ngIf="(x.answer !== x.option3 && x.checked == x.option3)">C. {{x.option3}} 
+              <ion-icon ios="ios-close-circle" md="md-close-circle"> </ion-icon>              
+        </ion-label>    
+
+        <ion-label *ngIf="(x.answer !== x.option3 && x.checked !== x.option3)">C. {{x.option3}} </ion-label>     
+
+</ion-item>
+
+
+<ion-item>
+
+              <ion-radio *ngIf="x.option4.checked" item-left value={{x.option4}} disabled="false"></ion-radio>   
+
+        <ion-label *ngIf="x.answer == x.option4">D. {{x.option4}}
+              <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"> </ion-icon>
+        </ion-label>     
+
+         <ion-label *ngIf="(x.answer!== x.option4 && x.checked == x.option4)">D. {{x.option4}} 
+             <ion-icon ios="ios-close-circle" md="md-close-circle"> </ion-icon>              
+        </ion-label>    
+
+        <ion-label *ngIf="(x.answer !== x.option4 && x.checked !== x.option4)">D. {{x.option4}} </ion-label>   
+
+</ion-item>
+ </ion-card>
+
+</ion-list>
+            <div align="middle">
+            <button (click)="submit()"  ion-button secondary>Try Again!!!</button>
+            </div>
+
+</ion-content>
+<!--<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home" (click)="home()"align-left><br>Home</ion-icon></ion-col>
+</ion-row>  </ion-toolbar>
+</ion-footer>-->
+
+
+
+

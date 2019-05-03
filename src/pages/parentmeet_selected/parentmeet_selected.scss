@@ -1,0 +1,105 @@
+.ios,
+.md {
+   parent-meet-selected {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100;
+        }
+        p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 70%;
+            color: white;
+            font-weight:bold;
+        }
+        ion-item {
+            padding: 5%;
+            resize: both;
+            border: 1px solid black;
+        }
+        p {
+            text-align: center;
+            color: white;
+        }
+        .ion-header {
+            height: 10%;
+        }
+        img {
+            padding-bottom: 2%;
+            width: 20px;
+            height: 15px;
+            text-align: center;
+        }
+        ion-select {
+            text-align: center;
+            color: white;
+            .select-icon, .select-text {
+                display: none !important;
+                /* hidden triangle icon and selected text */
+            }
+        }
+        
+        textarea {
+            padding: 5%;
+            resize: both;
+        }
+        ion-textarea {
+            resize: both;
+            text-decoration: none;
+       
+        }
+        #pmi{
+             border-radius: 10px;
+             background-color: #2072B0;//#4FC3F7;//#82B1FF;
+             color: white;
+            }
+             
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 80%;
+            color: white;
+        }
+        h2 {
+            padding-left: 5%;
+        }
+        #uuu {
+            padding: 4%;
+            color:white;
+            text-align: center;
+            background-color: #F8F9F9;
+            color: black;
+        }
+        #uuu1 {
+            padding-top: 2%;
+            padding-left: 4%;
+        }
+        #nnn {
+            font-size: 80%;
+        }
+        #btt {
+            margin-top: 2%;
+            width: 20%;
+            height: 5%;
+            text-align: center;
+        }
+    }
+}

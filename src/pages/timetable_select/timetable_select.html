@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar color="appheader" align-title="center">
+
+        <ion-title>{{this.parm_standard}} - {{this.parm_section}} {{this.parm_tt_date | date: 'dd/MMM'}}
+        </ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="crt">
+    <a name="top"></a>
+    <ion-card>
+
+        <ion-item>
+            <ion-label>Period</ion-label>
+            <ion-select [(ngModel)]="selected_period" interface="popover">
+                <ion-option *ngFor="let x of attendance_period" (ionSelect)="change(x)">{{x.period_type}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Start Time</ion-label>
+            <ion-datetime disabled displayFormat="HH:mm" [(ngModel)]="selected_start_time">{{selected_start_time}}</ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>End Time</ion-label>
+            <ion-datetime disabled displayFormat="HH:mm" [(ngModel)]="selected_end_time">{{selected_end_time}}</ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Subject</ion-label>
+            <ion-select [(ngModel)]="selected_subject_id" interface="popover">
+                <ion-option *ngFor="let n of subject_class"  (ionSelect)="subject(n)" value={{n.subject_id}} > {{n.subject}}</ion-option>
+            </ion-select><br>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Teacher</ion-label>
+            <ion-select [(ngModel)]="selected_teacher_id" interface="popover">
+                <ion-option *ngFor="let n of teacher_class" value={{n.teacher_id}}>{{n.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Attendance required</ion-label>
+            <ion-toggle item-right [(ngModel)]="attendance_selected" checked=false> </ion-toggle>
+        </ion-item>
+    </ion-card>
+    <div align="middle">
+        <button (click)="addRefTimeToClass()" ion-button color="secondary">Add</button>
+      
+
+    </div>
+    <br/>
+    <br/>
+    <ion-card id="ttsel">
+        <ion-row class="padding-bottom">
+            <ion-col class="align-bottom">Time </ion-col>
+            <ion-col class="align-bottom">Period</ion-col>
+            <ion-col class="align-bottom">Subject</ion-col>
+            <ion-col class="align-bottom">Teacher</ion-col>
+            <ion-col class="align-bottom">Attend</ion-col>
+        </ion-row>
+        <ion-list>
+            <ion-row *ngFor="let x of time_table_notification">
+                <ion-col  class="align-bottom">{{x.start_time}} {{x.end_time}}</ion-col>
+                <ion-col  class="align-bottom">{{x.period}}</ion-col>
+                <ion-col  class="align-bottom">{{x.subject}}</ion-col>
+                <ion-col  class="align-bottom">{{x.name}}</ion-col>
+                <ion-col  class="align-bottom">{{x.attendance}}<br>
+                    <a href="#top">
+                        <ion-icon id="icc" ios="ios-create" md="md-create" (click)="edit(x)"></ion-icon>
+                    </a>
+                    <ion-icon id="icc" ios="ios-trash" md="md-trash" (click)="delete(x)"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+</ion-content>

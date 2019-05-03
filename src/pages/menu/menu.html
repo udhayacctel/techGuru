@@ -1,0 +1,40 @@
+
+<ion-menu [content]="content">
+  <ion-header>
+
+    <ion-toolbar color="appheader">
+
+     <!-- create a Header and logout here--> 
+
+
+
+      <!--create icon<ion-icon ios="ios-log-out" md="md-log-out"></ion-icon> -->
+
+   <ion-label class="use"><b>USER NAME</b></ion-label>
+    
+   <ion-label  *ngIf="role_header" id="use1">parent</ion-label>
+   <ion-label  *ngIf="!role_header"id="use1">Teacher</ion-label>
+  <!-- <img id="img" src="assets/img/aniruthnew11.png"(click)="presentActionSheet()">-->
+  <ion-avatar>
+ <img  [src]="image" id="img" (press)="presentActionSheet()" imageViewer/>
+  </ion-avatar>
+ <!--<ion-fab bottom>
+ <button color="danger" ion-fab mini><ion-icon align= "middle" item-end small name="camera" ></ion-icon></button>
+ </ion-fab>--> 
+</ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)" >
+        <ion-icon id="ioc" [name]="p.icon" item-left></ion-icon>
+        {{ p.name }}
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage"  #content swipeBackEnabled="false"></ion-nav>

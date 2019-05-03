@@ -1,0 +1,55 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>Events</ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <br>
+
+    <ion-card id="ic">
+        <ion-item>
+            <ion-label fixed>Activity</ion-label>
+            <ion-select [(ngModel)]="selected_activity" (ionChange)="select_event()" interface="popover">
+                    <ion-option>Club</ion-option>
+                    <ion-option>House</ion-option>
+                    <ion-option>Sports</ion-option>
+                    <ion-option>Extra-Curricular Activities</ion-option>
+
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> Name</ion-label><br>
+            <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="selected_name"> </ion-textarea>
+
+        </ion-item>
+
+    </ion-card>
+    <div align="middle">
+    <button  ion-button color="secondary" (click)="save()"> Add </button>
+    </div>
+
+    <ion-card id="icperiod">
+
+
+        <ion-row class="padding-bottom" padding-left>
+            <ion-col><b>Name</b></ion-col>
+            <ion-col><b>Delete</b></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let i of event" padding-left>
+            <ion-col class="align-bottom">{{i.name}}</ion-col>
+            <ion-col class="align-bottom">
+                <button id="ibp" small clear (click)="delete(i)">
+                        <ion-icon name="trash">
+                        </ion-icon>
+                    </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+    </ion-content>

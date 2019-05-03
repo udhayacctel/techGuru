@@ -1,0 +1,35 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <p align="middle">{{parm_record}}</p>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list padding-top>
+
+        <ion-item *ngFor="let x of parentmeeting" (click)="showrow(x)">
+
+            <ion-avatar item-left>
+                 <div id="avt"><img src="assets/img/exams2.png"></div>
+            </ion-avatar>
+            <h2><b>{{x.date}}</b> </h2>
+            <p id="tec">{{x.teacher_message}}</p>
+
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>
+

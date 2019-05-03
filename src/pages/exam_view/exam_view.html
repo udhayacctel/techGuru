@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-navbar color="appheader" align-title="center">
+
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+        <ion-title *ngIf="stu">
+            <p align="middle" (click)="doFilter()">{{selected_record}} <br>
+                <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon>
+            </p>
+        </ion-title>
+        <ion-title *ngIf="teach">
+            Exam Schedule
+        </ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-select #sectionSelect>
+    <ion-option *ngFor="let x of parent" (ionSelect)="changerecord(x)">{{x.parent_student_name}}</ion-option>
+</ion-select>
+<ion-select #examSelect id="sec" [(ngModel)]="exam_type">
+    <ion-option *ngFor="let x of exam" (ionSelect)="timetable(x)">{{x.name}}</ion-option>
+</ion-select>
+
+
+<ion-content>
+
+    <ion-list>
+
+        <br>
+
+        <h3 padding-left (click)="listExam()">{{header_exam_type}}
+            <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon>
+        </h3>
+
+
+        <ion-item-sliding #slidingItem *ngFor="let x of exam_view">
+
+            <ion-item (click)="view(x)" *ngIf="!x.expand">
+
+                <ion-row no-lines>
+                    <ion-col class="col-3" width-25>{{x.date | date: 'dd/MM'}}</ion-col>
+                    <ion-col class="col-4" width-75>{{x.subject}}</ion-col>
+                </ion-row>
+
+            </ion-item>
+            <ion-item (click)="view(x)" text-wrap *ngIf="x.expand">
+
+                <ion-row no-lines>
+                    <ion-col class="col-3" width-25>{{x.date | date: 'dd/MM'}}</ion-col>
+                    <ion-col class="col-4" width-75>{{x.subject}}</ion-col>
+                </ion-row>
+
+                <ion-row no-lines>
+                    <ion-col width-25 class="col-3"></ion-col>
+                    <ion-col class="col-4" width-75>{{x.start_time}} - {{x.end_time}}</ion-col> <br>
+                </ion-row>
+                <ion-row no-lines>
+                    <ion-col width-25 class="col-3"></ion-col>
+                    <ion-col class="colwrap">{{x.syllabus}}</ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options side="right">
+
+                <button ion-button color="secondary" *ngIf="!showheader" (click)="edit(slidingItem,x)">
+            <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon>
+            Edit
+          </button>
+                <button ion-button color="danger" *ngIf="!showheader" (click)="Delete(slidingItem,x)">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Delete
+          </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
+
+    </ion-list>
+</ion-content>
+
+<!--
+
+<ion-footer>
+  <ion-toolbar color="appheader">
+    <ion-row><ion-col id="col100"><ion-icon color="lit" name="home" (click)="home()" align-left><br>Home</ion-icon></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+-->

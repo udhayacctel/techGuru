@@ -1,0 +1,75 @@
+<ion-select #sectionSelect [(ngModel)]="Selected_branch">
+    <ion-option>Ashok Nagar</ion-option>
+    <ion-option>Anna Nagar</ion-option>
+    <ion-option>Mugappair</ion-option>
+    <ion-option>K.K.Nagar</ion-option>
+    <ion-option>T.Nagar</ion-option>
+</ion-select>
+
+<ion-content id="ddd" style="background: url('assets/img/background.png') center; background-size: cover;">
+    <form [formGroup]="loginForm" (ngSubmit)="login">
+        <br>
+       <div align="middle"><img class="img1" src="assets/img/icon.png"></div>
+       <!-- <div>
+            <br>
+         <h4 align="center"><b>Connect | Communicate | Coordinate</b></h4>
+        </div>-->
+        <br><br>
+        <ion-grid id="wit">
+        <ion-row>
+            <ion-col>
+                <div align="middle">
+                <ion-list inset>
+
+                    <ion-item (click)="dofilter()">
+                        <ion-label item-left id="ilab">Branch</ion-label>
+                        <ion-icon item-right name="arrow-forward"></ion-icon>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label id="nom">+91</ion-label>
+                        <ion-input id="loginput" autocomplete="true" highlight-color="balanced" spellcheck="true" type="tel" maxlength="10" minlength="5" placeholder="Mobile No." formControlName="phNo" autofocus></ion-input>
+                    </ion-item>
+
+                </ion-list>
+                </div>  
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+        <ion-row>
+            <ion-col id="ccc">
+                <ion-spinner  *ngIf="Spin" name="ios"></ion-spinner>
+            </ion-col>
+        </ion-row>
+
+        <br>
+        <ion-grid>
+            <ion-row>
+        <div ion-col align="middle" id="a1">
+            <button class="button" ion-button secondary (click)="Submit()" [disabled]="!loginForm.valid">
+      Continue
+</button></div></ion-row>
+        </ion-grid>
+
+        <br>
+
+        <ion-grid id="err">
+            <ion-row>
+                <ion-col col-5>
+                    <ion-item  no-lines text-wrap *ngIf="!loginForm.controls.phNo.valid && 
+                      loginForm.controls.phNo.hasError('Mobile Number in-correct')">
+                        <p class="hint">Mobile No Invalid</p>
+                    </ion-item>
+                    <ion-item no-lines text-wrap *ngIf="!loginForm.controls.phNo.valid &&
+                    loginForm.controls.phNo.hasError('Records not in the database')">
+                        <p class="hint">Please Enter Registered Mobile Number</p>
+
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </form>
+    <p></p>
+    <p></p><br>
+
+</ion-content>

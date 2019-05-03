@@ -1,0 +1,54 @@
+
+<ion-header transparent>
+     <ion-navbar color="appheader" align-title="center">
+    <ion-title>{{selected_subject}} {{countDown | async | formatTime}} </ion-title>
+        
+  <ion-buttons  end>
+    <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+    </ion-buttons> 
+        </ion-navbar>
+        </ion-header>
+<ion-content overflow-scroll="false">
+     <ion-list no-lines radio-group [(ngModel)]="x.checked" *ngFor= "let x of quiz_studnt_quiz" [disabled]="counter == 0">   
+<ion-card>
+<ion-item text-wrap id="ioncad">
+    <ion-label>{{x.q_no}} . {{x.questions}}</ion-label>      
+</ion-item>
+
+<ion-item>
+      <ion-radio item-left value={{x.option1}} checked></ion-radio>
+       <ion-label>A.{{x.option1}}</ion-label>
+</ion-item>
+
+<ion-item>
+        <ion-label>B.{{x.option2}}</ion-label>
+        <ion-radio item-left value={{x.option2}} checked></ion-radio>   
+</ion-item>
+
+<ion-item>
+        <ion-label>C. {{x.option3}}</ion-label>
+        <ion-radio item-left value={{x.option3}} checked></ion-radio>  
+</ion-item>
+
+<ion-item>
+        <ion-label>D. {{x.option4}}</ion-label>
+        <ion-radio item-left value={{x.option4}}></ion-radio> 
+</ion-item>
+</ion-card>
+
+</ion-list>
+
+<br>
+     <div align="middle">
+     <button  (click)="submit()" [disabled]="counter == 0" ion-button secondary>Submit</button>
+     </div>
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="co"><ion-icon color="lit" name="home" (click)="home()" align-left>
+    <br>Home</ion-icon></ion-col>
+</ion-row>  </ion-toolbar>
+</ion-footer>
+-->

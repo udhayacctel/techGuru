@@ -1,0 +1,64 @@
+<ion-header transparent  >
+  <ion-navbar color="appheader" align-title="center">
+    <button ion-button menuToggle >
+      <ion-icon name="menu"  ></ion-icon>
+    </button>
+    <ion-title>Daily Diary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-select #statusSelect multiple="true" [(ngModel)]="selected_status" (ionChange)="applyFilter()">
+         <ion-option *ngFor="let x of status">{{x}}</ion-option>
+</ion-select>
+
+
+<ion-content>  
+  <ion-card>
+   <!-- <ion-item  no-lines>
+          <ion-label ><b>Roll No</b> </ion-label>
+          <ion-label> <b>Name</b> </ion-label>
+          <ion-label (click)="doFilter()"> <b>Work</b><ion-icon item-right id="filter" ios="ios-funnel" md="md-funnel"></ion-icon> </ion-label>
+          <ion-label> <b>Teacher</b> </ion-label>
+
+    </ion-item>-->
+    
+    <ion-row>
+        <ion-col><b>Roll No</b></ion-col>
+        <ion-col><b>Name</b></ion-col>
+        <ion-col><b>Work</b><ion-icon item-right id="filter" ios="ios-funnel" md="md-funnel"></ion-icon></ion-col>
+        <ion-col><b>Teacher</b></ion-col>
+    </ion-row>
+ <br/>
+   <!-- <ion-list no-lines paddin-left="10">      
+       <ion-item  no-lines *ngFor="let x of wrk_screen">  
+          <ion-label >{{x.student_roll_no}}</ion-label>
+          <ion-label >{{x.name}}</ion-label> 
+          <ion-label >{{x.status == null ? 'UnDone' : x.status }}</ion-label> 
+          <ion-toggle toogle-class="toggle-balanced" checked={{x.teacher_status}} [(ngModel)]="x.teacher_status" > </ion-toggle>
+       </ion-item>-->
+       <ion-list> 
+      <ion-row  *ngFor="let x of wrk_screen"> 
+        <ion-col>{{x.student_roll_no}}</ion-col>
+        <ion-col>{{x.name}}</ion-col>
+        <ion-col>{{x.status == null ? 'UnDone' : x.status }}</ion-col>
+        <ion-col ><ion-checkbox checked={{x.teacher_status}} [(ngModel)]="x.teacher_status" > </ion-checkbox>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-list>
+     <ion-item>
+        <ion-label>Coordinator</ion-label>
+        <ion-toggle [(ngModel)]="coordinator_update" checked="false"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  
+<div id="a1" align="middle">
+        <button (click)="submit()" ion-button secondary small >Submit</button>
+        <button (click)="save()" ion-button secondary small >Approve</button>
+</div>
+
+</ion-content>

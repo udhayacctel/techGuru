@@ -1,0 +1,125 @@
+.ios,
+.md {
+    exam-selected-view {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        p,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+        }
+        #err1 {
+            color: red;
+        }
+        #book {
+            width: 5%;
+        }
+        #mes {
+            color: red;
+            font-size: 80%;
+        }
+        #btt1 {
+            margin-left: 80%;
+            font-size: 20px;
+        }
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        #ex {
+            border: 1px solid blue;
+            background-color: cornflowerblue;
+        }
+        #aa {
+            margin-top: 3%;
+            align-items: center;
+            font-style: bold;
+            height: 0%
+        }
+        #a0 {
+            margin-left: 4%;
+        }
+        #a1 {
+            margin-left: 1%
+        }
+        #a2 {
+            margin-left: 55%
+        }
+        #a3 {
+            margin-left: 78%
+        }
+        #a4 {
+            width: 27%;
+            margin-left: 0%
+        }
+        #a5 {
+            margin-left: 10%;
+            width: 23%
+        }
+        #a6 {
+            margin-left: 1%;
+            width: 27%
+        }
+        #a7 {
+            margin-left: 10%;
+            width: 27%
+        }
+        #a8 {
+            margin-left: 1%;
+            margin-top: 1%;
+            width: 100%
+        }
+        #a10 {
+            text-align: right;
+            width: 80%;
+        }
+        #a9 {
+            text-align: right;
+            width: 80%;
+        }
+        #a11 {
+            text-align: right;
+            width: 80%;
+        }
+        #btt {
+            height: 6%;
+            width: 30%;
+            margin-left: 35%
+        }
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        #save {
+            text-align: center;
+            background-color: white;
+            color: navy;
+        }
+        ion-card {
+
+            border-radius:15px;
+        }
+    }
+}

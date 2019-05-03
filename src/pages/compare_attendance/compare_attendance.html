@@ -1,0 +1,69 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+        <ion-title> Attendance Comparison</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <br>
+    <ion-card>
+
+        <ion-item>
+            <ion-label fixed>Student</ion-label>
+         <!--<ion-select [(ngModel)]="selected_student" (ionChange)="class_period()" interface="popover">-->
+             <ion-select [(ngModel)]="selected_student" interface="popover">
+                <ion-option *ngFor="let x of student_list" (ionSelect)="select(x)"> {{x.name}} </ion-option>
+
+            </ion-select>
+        </ion-item>
+    </ion-card><br>
+
+<!--<ion-card>
+     <ion-item no-lines>
+            <ion-label> <b>Date</b> </ion-label>
+            <ion-label class="ca1"> <b>Class Att</b> </ion-label>
+            <ion-label class="ca2"> <b>Bus Att</b> </ion-label>
+        </ion-item>
+        <ion-list no-lines>
+            <ion-item no-lines *ngFor="let x of absent_list">
+                    <ion-label>{{x.date}}</ion-label>
+                    <ion-toggle toggle-class="toggle-balanced" [(ngModel)]="x.class_attendance" checked={{x.class_attendance}}> </ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" [(ngModel)]="x.bus_attendance" checked={{x.bus_attendance}}> </ion-toggle>
+            </ion-item>
+        </ion-list>
+    </ion-card>-->
+<ion-card>
+     <ion-item no-lines>
+            <ion-label> <b>Date</b> </ion-label>
+            <ion-label> <b>Class Att</b> </ion-label>
+        </ion-item>
+ <ion-list no-lines>
+            <ion-item no-lines *ngFor="let x of absent_list">
+                    <ion-label>{{x.date}}</ion-label>
+                   <ion-toggle item-end toggle-class="toggle-balanced" [(ngModel)]="x.class_attendance" checked={{x.class_attendance}}> </ion-toggle>
+                   </ion-item>
+        </ion-list>
+    </ion-card><br>
+    <ion-card>
+     <ion-item no-lines>
+            <ion-label> <b>Date</b> </ion-label>
+            <ion-label> <b>Bus Att</b> </ion-label>
+        </ion-item>
+ <ion-list no-lines>
+            <ion-item no-lines *ngFor="let x of absent_list">
+                    <ion-label>{{x.date}}</ion-label>
+                    <ion-toggle iem-end toggle-class="toggle-balanced" [(ngModel)]="x.bus_attendance" checked={{x.bus_attendance}}> </ion-toggle>
+                   </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>

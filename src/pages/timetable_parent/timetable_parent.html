@@ -1,0 +1,31 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>TimeTable</ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    </ion-navbar>
+</ion-header>
+<ion-content padding><br/>
+    <ion-card>
+    <ion-item>
+        <ion-label class="www" stacked>Student</ion-label>
+        <ion-select [(ngModel)]="selected_student_name">
+            <ion-option *ngFor=" let x of parent" (ionSelect)=parseval(x)>{{x.parent_student_name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card><br>
+    
+    <ion-card>
+    <ion-item>
+        <ion-label class="www" stacked>To Date
+            <ion-icon id="a10" ios="ios-calendar-outline" md="md-calendar"></ion-icon>
+            <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" pickerFormat="DD MM YYYY" [(ngModel)]="selected_tt_date"></ion-datetime>
+        </ion-label>
+    </ion-item>
+    </ion-card><br>
+    <div align="middle">
+    <button ion-button color="secondary" (click)="submitview()"> View </button>
+    </div>
+</ion-content>

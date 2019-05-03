@@ -1,0 +1,48 @@
+<ion-header transparent>
+     <ion-navbar color="appheader" align-title="center">
+    <ion-title>Admin Quiz</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons  end>
+    <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+    </ion-buttons> 
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<ion-item>
+    <ion-label class="www" stacked>Question</ion-label>
+       <ion-textarea [(ngModel)]="question"></ion-textarea>
+  </ion-item>
+<ion-item>
+   <ion-label class="www" stacked>Option1</ion-label>
+   <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="option1"></ion-textarea>
+</ion-item>
+<ion-item>
+   <ion-label class="www" stacked>Option2</ion-label>
+   <ion-textarea [(ngModel)]="option2" autocomplete="true" spellcheck="true"></ion-textarea>
+</ion-item>
+<ion-item>
+   <ion-label class="www" stacked>Option3</ion-label>
+   <ion-textarea [(ngModel)]="option3" autocomplete="true" spellcheck="true"></ion-textarea>
+</ion-item>
+<ion-item>
+   <ion-label class="www" stacked>Option4</ion-label>
+   <ion-textarea [(ngModel)]="option4" autocomplete="true" spellcheck="true"></ion-textarea>
+</ion-item>
+<ion-item>
+   <ion-label class="www" stacked>Answer</ion-label>
+   <ion-textarea [(ngModel)]="Answer" autocomplete="true" spellcheck="true"></ion-textarea>
+</ion-item>  
+
+<div align="middle">
+<button  ion-button color="secondary"  (click)="add()">Add</button>
+</div>
+</ion-content>
+<ion-footer>
+ <!-- <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home"  (click)="home()" align-left><br>Home</ion-icon></ion-col>
+<ion-col id="col2">  <ion-icon name="book" (click)="viewDiary()" ><br>View</ion-icon></ion-col></ion-row>  </ion-toolbar>
+</ion-footer>-->

@@ -1,0 +1,65 @@
+.ios,
+.md {
+    gallery-view{
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+
+
+        p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 90%;
+            line-height: 18px;
+            white-space: pre-line;
+            color: black;
+        }
+
+        .gi{
+
+          margin-left: 0%;
+       
+          }
+
+          ion-slide img {
+            height: 50vh !important;
+            width: auto !important;
+            
+          }
+
+          .itg{
+
+            color:navy;
+          }
+          
+         
+        #icg{
+
+            color: white;
+            }
+
+         #icgv{
+
+            color: white;
+            }
+
+            #galcard{
+            
+            background-color: #29B6F6;
+            color:white;
+   
+            }
+
+            #gallcard{
+            
+            background-color: #29B6F6;
+            color:white;
+   
+            }
+        .thumb-img{
+
+            padding:10px;
+        }
+     
+    }
+}

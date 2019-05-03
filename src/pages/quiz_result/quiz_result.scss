@@ -1,0 +1,49 @@
+.ios,.md{
+ quiz-result {
+       @font-face{
+        font-family: Barrio;
+        src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,ion-select{font-family: 'Times New Roman', Times, serif;
+    font-size: 100%; }
+        button,h3 { font-family:'Times New Roman', Times, serif;} 
+        ion-title,ion-segment,#ans{font-family: 'Oswald', sans-serif;}
+        .www,p,h4{font-family: 'Oswald', sans-serif;font-size:100%;}
+
+    #a1{
+    text-align: right;
+    margin-left: 60%;
+    height: 1px
+}
+#ans{
+  color:green;
+}
+#a2{
+    margin-left:27%
+}
+.segment-button ion-icon {
+  font-size: 2.2rem;
+}
+#col1,#col2{
+    padding: 0;
+    text-align: center;
+    font-size: 80%;
+    color:white;
+}
+.custom-icon {
+  font-size: 64px;
+  color : red;
+}
+img{
+width:30px;
+height:30px;
+}
+
+#ioncad{
+
+    background-color:  #eff3f4;
+}
+
+}
+
+}

@@ -1,0 +1,62 @@
+.ios,
+.md {
+    timetable-select {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select,
+        ion-datetime {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        p,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+        }
+        #col1 {
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        #icc {
+            color: black;
+        }
+        #icr {
+            color: red;
+        }
+        ion-icon {
+            text-align: center;
+            color: white;
+        }
+        button {
+            text-align: center;
+        }
+        ion-card{
+            border-radius:15px;
+        }
+        
+        .padding-bottom {
+            background-color:#F8F9F9;  
+            color:black;
+            }
+        a{
+            text-decoration:none;
+        }
+        #ttsel {
+             background-color: #29B6F6;
+             color:white;
+        }
+    }
+}

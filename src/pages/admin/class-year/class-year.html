@@ -1,0 +1,85 @@
+<ion-header>
+
+    <ion-navbar color="appheader" align-title="center">
+
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>Classes & Years</ion-title>
+ <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-segment [(ngModel)]="listnew" (ionChange)="segment()">
+        <ion-segment-button value="list">
+            List Classes
+        </ion-segment-button>
+        <ion-segment-button value="create">
+            Create Class
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content padding class="page-bg">
+    <p></p>
+    <div [ngSwitch]="listnew">
+        <ion-card *ngSwitchCase="'create'">
+            <ion-card-header align="middle" id="ich">
+                Create New Class
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+                                <ion-item>
+                                    <ion-label floating>Standard</ion-label>
+                                    <ion-input type="text" #std required [(ngModel)]="selected_standard"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label floating>Section</ion-label>
+                                    <ion-input type="text" #section required [(ngModel)]="selected_section"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label floating>Acad year</ion-label>
+                                    <ion-input type="text" #year required [(ngModel)]="selected_year"></ion-input>
+                                </ion-item>
+                            </ion-list>
+                            <div align="middle">
+                            <button ion-button small color="secondary" (click)="createNew()">
+                                Save</button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card  *ngSwitchCase="'list'">
+                <ion-title align="middle"  class="header-row-display">
+                       Year - {{acad_year}} 
+                    </ion-title>
+                    
+            <ion-list>
+                    <div *ngFor="let cl of uniq_sec">
+                        <ion-item>
+                            Class : {{cl.standard}} - {{cl.section}}
+                          <button item-right clear>
+                       <ion-icon  ios="ios-trash" md="md-trash" (click)="delete(cl)"></ion-icon>
+                          </button>  
+                        </ion-item>
+                  </div>
+            </ion-list>
+            </ion-card>
+            
+        </div>
+
+</ion-content>

@@ -1,0 +1,96 @@
+.ios,
+.md {
+    dailydiary-view2 {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            font-size: 100%;
+        }
+        button,
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+            color: black;
+        }
+        .www,
+        p,
+        h4,
+        ion-item {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+            color: black;
+        }
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        .ion {
+            text-align: left;
+            margin-top: 0;
+        }
+    }
+    #a2 {
+        position: relative;
+        text-align: center;
+        margin-left: 0%;
+      
+    }
+
+    #ib{
+        color: white;
+    }
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    @keyframes zoomIn {
+        from {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3);
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+    .zoomIn {
+        animation-name: zoomIn;
+    }
+    @keyframes bounceInUp {
+        from, 60%, 75%, 90%, to {
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+        from {
+            opacity: 0;
+            transform: translate3d(0, 3000px, 0);
+        }
+        60% {
+            opacity: 1;
+            transform: translate3d(0, -20px, 0);
+        }
+        75% {
+            transform: translate3d(0, 10px, 0);
+        }
+        90% {
+            transform: translate3d(0, -5px, 0);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .bounceInUp {
+        animation-name: bounceInUp;
+        animation-delay: 1s;
+    }
+}

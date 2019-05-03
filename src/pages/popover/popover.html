@@ -1,0 +1,17 @@
+<ion-list *ngIf="!pop">
+ <ion-item>
+<ion-col><ion-icon id="pop" name="home" align-left (click)="Home()" > Home </ion-icon></ion-col>
+ </ion-item>
+ <ion-item *ngIf="notifypop">
+ <ion-col><ion-icon id="pop" name="book" align-left (click)="NotifyView()"> View </ion-icon></ion-col>
+ </ion-item>
+ <ion-item *ngIf="dailypop">
+ <ion-col ><ion-icon id="pop" name="book"  align-left (click)="viewDiary()"> View </ion-icon></ion-col>
+ </ion-item>
+ <ion-item *ngIf="parentpop">
+ <ion-col ><ion-icon id="pop" name="people" align-left (click)="ParentMeetView()"> View </ion-icon></ion-col>
+ </ion-item>
+ <ion-item *ngIf="exampop">
+ <ion-col ><ion-icon id="pop" name="book" align-left (click)="ExamView()"> View </ion-icon></ion-col>
+ </ion-item>
+</ion-list>

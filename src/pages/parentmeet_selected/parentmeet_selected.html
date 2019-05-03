@@ -1,0 +1,52 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <p (click)="doFilter()">{{selected_record}} <br>
+                <ion-icon  ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon>
+            </p>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-select #sectionSelect [(ngModel)]="selected_record">
+    <ion-option *ngFor="let role of student" (ionSelect)="changerecord(role)">Roll No.{{role.student_id}} - {{role.name}}</ion-option>
+</ion-select>
+
+<ion-content>
+
+<ion-card id="pmi">
+       
+    <ion-card-header  id="uuu" stacked class="www">Teacher FeedBack</ion-card-header>
+        
+        <ion-textarea autocomplete="true" spellcheck="true" rows="7" text-wrap [(ngModel)]="selected_teacher_message"></ion-textarea>
+
+</ion-card>
+
+<ion-card id="pmi">
+
+    <ion-card-header id="uuu"  class="www">Parent FeedBack</ion-card-header>
+        
+        <ion-textarea rows="7" text-wrap autocomplete="true" spellcheck="true" [(ngModel)]="selected_student_message"></ion-textarea>
+   
+    </ion-card>
+
+    <div align="middle">
+    <button ion-button color="secondary"(click)="save()">Save</button>
+    </div>
+ 
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home" (click)="home()"align-left><br>Home</ion-icon></ion-col>
+  <ion-col id="col1"><ion-icon color="lit" name="book" (click)="View()"align-left><br>View</ion-icon></ion-col>
+</ion-row>  </ion-toolbar> 
+</ion-footer>
+-->

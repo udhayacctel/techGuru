@@ -1,0 +1,94 @@
+
+<ion-header transparent>
+     <ion-navbar color="appheader">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Student Details</ion-title>
+    <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<ion-card>
+<ion-list>
+  <ion-item> 
+        <ion-label floating>Student Id</ion-label>
+        <ion-textarea [(ngModel)]="selected_id" autocomplete="true" spellcheck="true">
+        </ion-textarea>
+  </ion-item>
+
+ <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="selected_name">
+        </ion-textarea> 
+  </ion-item>
+
+  <ion-item>
+        <ion-label floating>Standard</ion-label>
+        <ion-select [(ngModel)]="selected_standard" (ionChange)="class_selected()" interface="popover" >
+        <ion-option *ngFor= " let x of standard" value="{{x.standard}}"> Class - {{x.standard}} </ion-option>
+        </ion-select>
+  </ion-item>
+  
+  <ion-item>
+        <ion-label floating>Section</ion-label>
+        <ion-select [(ngModel)]="selected_section" interface="popover" >
+        <ion-option *ngFor= " let y of sec" value="{{y.section}}"> {{y.section}} </ion-option>
+        </ion-select>
+  </ion-item>
+
+  <ion-item>
+        <ion-label floating>Contact No.</ion-label>
+        <ion-textarea [(ngModel)]="selected_contact" autocomplete="true" spellcheck="true">
+        </ion-textarea>
+  </ion-item>
+</ion-list>
+</ion-card><br>
+  
+  <ion-card id="icsd">
+   <ion-title align="middle"><span id="sdt">Parent Information </span></ion-title>     
+  </ion-card> 
+
+  <ion-card>
+  <ion-list>      
+  <ion-item>
+        <ion-label floating>Parent Name</ion-label>
+        <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="selected_parentname">
+        </ion-textarea> 
+  </ion-item>
+
+  <ion-item>
+        <ion-label floating>Parent Contact No.</ion-label>
+        <ion-textarea [(ngModel)]="selected_parentcontact" autocomplete="true" spellcheck="true">
+        </ion-textarea>
+  </ion-item>
+
+
+  <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="selected_address">
+        </ion-textarea> 
+  </ion-item>
+
+  <ion-item>
+        <ion-label floating>Email Id</ion-label>
+        <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="selected_email">
+        </ion-textarea> 
+  </ion-item>
+ </ion-list>
+  </ion-card>
+  <div align="middle">
+  <button ion-button color="secondary" (click)="submit()">Add</button>
+  <button ion-button color="danger" (click)="remove()">Delete</button>
+  </div>
+</ion-content>
+
+<!--<ion-footer>
+    <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home" (click)="home()" align-left><br>Home</ion-icon></ion-col>
+  </ion-row>  </ion-toolbar>
+</ion-footer>-->

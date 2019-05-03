@@ -1,0 +1,46 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Free Staff List
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding><br/>
+    <ion-card>
+        <ion-item>
+            <ion-label>Standard</ion-label>
+            <ion-select [(ngModel)]="selected_standard" (ionChange)="class_period()" interface="popover">
+                <ion-option *ngFor=" let x of standard" value="{{x.standard}}"> Class - {{x.standard}} </ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-card><br>
+
+    <ion-card *ngIf="freestaff">
+        <ion-item>
+            <ion-label>Period</ion-label>
+            <ion-select [(ngModel)]="selected_period" interface="popover">
+                <ion-option *ngFor="let x of classRefTimes" (ionSelect)="change(x)">{{x.period_type}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-card>
+    <br/><br/>
+    <ion-card id="frst">
+        <ion-row class="padding-bottom">
+            <ion-col class="align-bottom">Teacher Id</ion-col>
+            <ion-col class="align-bottom">Teacher Name</ion-col>
+            <ion-col class="align-bottom">Day</ion-col>
+        </ion-row>
+
+        <ion-list>
+            <ion-row *ngFor="let x of time_table_notification_date_day">
+                <ion-col class="align-bottom">{{x.teacher_number}}</ion-col>
+                <ion-col class="align-bottom">{{x.name}}</ion-col>
+                <ion-col class="align-bottom">{{x.day}}</ion-col>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+
+</ion-content>

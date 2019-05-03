@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>Parent Meeting</ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding><br>
+
+    <ion-card>
+    <ion-item id="std" text-wrap>
+        <ion-label class="www" stacked>Standard</ion-label>
+        <ion-select id="mod" [(ngModel)]="selected_standard" (ionChange)="class_selected()" interface="popover">
+            <ion-option *ngFor=" let x of standard" value="{{x.standard}}"> Class - {{x.standard}} </ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card><br>
+
+    <ion-card>
+    <ion-item id="sec" *ngIf="stdsec">
+        <ion-label class="www" stacked>Section</ion-label>
+        <ion-select [(ngModel)]="selected_section" interface="popover">
+            <ion-option *ngFor=" let y of sec " value="{{y.section}}">{{y.section}}</ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card><br>
+
+  <div align="middle">
+        <button  *ngIf="stdsec" ion-button secondary (click)="Submit()">
+      Submit
+</button></div>
+
+
+</ion-content>

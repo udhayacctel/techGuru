@@ -1,0 +1,43 @@
+<ion-header>
+    
+        <ion-navbar color="appheader" align-title="center">
+    
+            <ion-title *ngIf="role=='P'">
+                <p align="middle" (click)="openParent()">{{selected_record}} <br>
+                    <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon>
+                </p>
+            </ion-title>
+    
+            <button ion-button menuToggle> 
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-select #parentSelect>
+        <ion-option *ngFor="let x of parent" (ionSelect)="changerecord(x)">{{x.parent_student_name}}</ion-option>
+    </ion-select>
+    
+    <ion-content padding>
+        <br>
+        <ion-card>
+            <ion-item>
+                <ion-label padding-left>Notification </ion-label>
+                <ion-icon item-right id="filter" ios="ios-funnel" md="md-funnel"></ion-icon>
+                <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" pickerFormat="DD MM YYYY" (ionChange)="attendancechange(x)" [(ngModel)]="selected_date"></ion-datetime>
+    
+            </ion-item>
+        </ion-card>
+    
+        <ion-list>
+            <ion-item text-wrap *ngFor="let x of event">
+                <ion-avatar item-start>
+                    <img src="assets/img/notification.png">
+                </ion-avatar>
+                <h2 id="eventnotify"> {{x.title}} </h2>
+                <p id="evntnoti"> {{x.message}} </p>
+            </ion-item>
+        </ion-list>
+    
+    </ion-content>

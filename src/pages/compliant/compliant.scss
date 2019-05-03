@@ -1,0 +1,26 @@
+.ios, .md {
+    compliant-page{
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+       }
+        #cmp{
+            border-radius: 10px;
+            background-color: #2072B0;
+           //#4FC3F7;
+           //#82B1FF;
+            color: white;
+       }
+        #comp {
+            padding: 4%;
+            color:white;
+            text-align: center;
+            background-color: #F8F9F9;
+            color: black;
+       }
+        .cb {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100;
+       }
+   }
+}

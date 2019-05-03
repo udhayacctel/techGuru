@@ -1,0 +1,66 @@
+<ion-header>
+    
+      <ion-navbar  color="appheader" align-title="center">
+    
+      
+        <button id="btt" ion-button menuToggle >
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title *ngIf="!showheader" (click)="doFilter()">
+    <p align="middle">{{selected_record}} <br>
+               <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon>
+    </p>  </ion-title>       
+    <ion-title *ngIf="showheader">
+    TimeTable
+    </ion-title>       
+      <ion-buttons  end>
+        <button ion-button (click)="presentPopover($event)">
+      <ion-icon name="more"></ion-icon>
+    </button>
+        </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+    <ion-select #sectionSelect>
+             <ion-option *ngFor="let x of parent" (ionSelect)="changerecord(x)">{{x.parent_student_name}}-{{x.parent_student_standard}}-{{x.parent_student_section}}</ion-option>
+      </ion-select>
+      
+    
+    <ion-content >
+    
+           <h3 padding-left>{{header_timetable}} </h3> 
+    
+       <ion-list *ngFor= "let y of time_table_notification_date_day" id="wid">
+    
+    <ion-card id="ttview">
+        <ion-grid>
+      <ion-row class="row13">
+        <ion-col width-20 align-self-start align="middle">
+          <div>
+          <br>  <b>Time<br><br>{{y.start_time}}-{{y.end_time}}</b>
+          </div>
+        </ion-col>
+        <ion-col width-80 >
+        <ion-row class="row12" ><ion-col class="col33"><b>Period:</b></ion-col><ion-col class="col33"><b>{{y.period}}</b></ion-col></ion-row>
+        <ion-row class="row12" ><ion-col class="col33"><b>Subject:</b></ion-col><ion-col class="col33"><b>{{y.subject}}</b></ion-col></ion-row>
+        <ion-row class="row12" ><ion-col class="col33"><b>Teacher:</b></ion-col><ion-col class="col33"><b>{{y.name}}</b></ion-col></ion-row>
+        <ion-row class="row12" ><ion-col  align-self-end *ngIf="!showattend" class="col33"><b>Attend:</b> 
+               </ion-col><ion-col class="col33">     
+                <b>  {{y.attendance}} </b>
+                </ion-col>
+                <ion-col  *ngIf="showattend"  class="col33">Attend<br> 
+                     
+                </ion-col></ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>             
+    </ion-card>         
+          
+    
+    
+        </ion-list>
+        
+    
+    </ion-content>
+    
+    

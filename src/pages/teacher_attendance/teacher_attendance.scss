@@ -1,0 +1,18 @@
+.ios,
+.md {
+    teacher-attendance {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+
+        .t1 {
+            text-align: center;
+            margin-right:24px;
+        }
+        .t2 {
+            text-align: right
+        }
+  
+    }
+}

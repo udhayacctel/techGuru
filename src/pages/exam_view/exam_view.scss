@@ -1,0 +1,77 @@
+.ios,
+.md {
+    exam-view {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+        }
+        p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80%;
+            color: white;
+            font-weight:bold;
+        }
+        #col100,
+        #col200 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        .hh {
+            font-size: 120%;
+            text-align: center;
+            color: white;
+        }
+        .col-1 {
+            background-color: #D5A907;
+            text-align: center;
+        }
+        .col-2 {
+            background-color: #F9D242;
+            text-align: center;
+        }
+        .col-0 {
+            text-align: center;
+            color: blue;
+        }
+        #nov {
+            font-size: 150%;
+            color: white;
+        }
+        #d {
+            color: black;
+        }
+        .col-3 {
+            text-align: center;
+            color: #FC0877;
+            background-color: #BBF8F2;
+        }
+        .col-4 {
+            text-align: justify;
+            background-color: #93EEE4;
+        }
+        .colwrap {
+            white-space: normal;
+            background-color: #93EEE4;
+        }
+    }
+}

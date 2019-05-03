@@ -1,0 +1,103 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Notification</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+   
+    <form [formGroup]="notifyForm">
+        <ion-card>
+        <ion-list no-lines radio-group formControlName="selected_activity">
+            
+            <ion-row>
+
+                <ion-col>
+                    <ion-item>
+                        <ion-radio value="A" checked></ion-radio>
+                        <ion-label>School</ion-label>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col>
+                    <ion-item>
+                        <ion-label>Teacher</ion-label>
+                        <ion-radio value="T"></ion-radio>
+                    </ion-item>
+                </ion-col>
+
+            </ion-row>
+        </ion-list>
+
+        <ion-item>
+            <ion-label class="www" stacked> From Date
+                <ion-icon ios="ios-calendar-outline" md="md-calendar"></ion-icon>
+                <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" formControlName="selected_from_date"></ion-datetime>
+            </ion-label>
+        </ion-item>
+        <ion-item no-lines *ngIf="(notifyForm.controls.selected_from_date.dirty && notifyForm.controls.selected_from_date.hasError('not a valid date'))">
+            <p id="mes">Date should be greater than Today </p>
+        </ion-item>
+
+        <ion-item>
+            <ion-label class="www" stacked>To Date
+                <ion-icon ios="ios-calendar-outline" md="md-calendar"></ion-icon>
+                <ion-datetime displayFormat="DD/MMM/YYYY" pickerFormat="DD MMM YYYY" min="2017" max="2018-12-31" formControlName="selected_to_date"></ion-datetime>
+            </ion-label>
+        </ion-item>
+        <ion-item no-lines *ngIf="(notifyForm.controls.selected_to_date.valid && notifyForm.hasError('Less than'))">
+            <p id="mes">To Date Should be Greater than From Date </p>
+        </ion-item><br/>
+                
+        <ion-item>         
+            <ion-label class="www" stacked>Title</ion-label>                   
+            
+            <ion-textarea class="first" autocomplete="on" spellcheck="true" type="text"
+                                formControlName="selected_title"></ion-textarea> 
+            <ion-select  class="second" (ionChange)="selecttitle($event)" >
+               <ion-option  *ngFor="let t of temp" [value]="t.template_title">{{t.template_title}}</ion-option>                                  
+            </ion-select>  
+        </ion-item>
+       
+        <ion-item no-lines *ngIf="!notifyForm.controls.selected_title.valid && (notifyForm.controls.selected_title.dirty) ">
+            <p id="mes">Enter the Title</p>
+        </ion-item><br/> 
+<ion-item>
+       <ion-label class="www" stacked> Message </ion-label>
+
+         <ion-textarea  class="first" style= "width:90%" autocomplete="on" spellcheck="true" type="text" 
+                        formControlName="selected_message"></ion-textarea>
+        <ion-select class="second"  (ionChange)="selectchange($event)">
+                <ion-option *ngFor="let t of temp" [value]="t.template_message">{{t.template_message}}</ion-option>
+         </ion-select>
+</ion-item>
+      <!--   <ion-input  
+         formControlName="selected_message"></ion-input>       -->     
+
+        <ion-item  no-lines *ngIf=" !notifyForm.controls.selected_message.valid && notifyForm.controls.selected_message.dirty">
+            <p id="mes">Enter the Message</p>
+        </ion-item><br/>   
+    </ion-card>
+
+        <div align="middle">
+        <button  id="sn" ion-button outline (click)="notifythanks()" [disabled]="!notifyForm.valid">
+      Set Notification
+    </button>
+    </div>
+    </form>
+   
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home" (click)="home()" align-left><br>Home</ion-icon></ion-col>
+<ion-col id="col2"  >  <ion-icon name="book" (click)="view()" ><br>View</ion-icon></ion-col></ion-row>  </ion-toolbar>
+</ion-footer>
+-->

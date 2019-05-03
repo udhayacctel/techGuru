@@ -1,0 +1,39 @@
+<ion-header>
+
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>Attendance</ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding><br/>
+    <ion-card>
+    <ion-item>
+        <ion-label class="www" stacked>Standard</ion-label>
+        <ion-select [(ngModel)]="selected_standard" (ionChange)="class_selected()" interface="popover">
+            <ion-option *ngFor=" let x of cls" value="{{x.standard}}"> Class - {{x.standard}} </ion-option>
+
+        </ion-select>
+    </ion-item>
+    </ion-card><br>
+
+    <ion-card>
+    <ion-item *ngIf="stdsec">
+        <ion-label class="www" stacked>Section</ion-label>
+        <ion-select [(ngModel)]="selected_section" interface="popover">
+            <ion-option *ngFor="let y of sec">{{y.section}}</ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-card><br/>
+
+    <div align="middle">
+    <button  *ngIf="stdsec" ion-button secondary  (click)="attendance2()">
+      Submit
+    </button>
+    </div>
+    
+</ion-content> 

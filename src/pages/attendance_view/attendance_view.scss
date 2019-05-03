@@ -1,0 +1,99 @@
+.ios, .md {
+    attendance-view {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+       }
+        ion-option, ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+       }
+        button, h3 {
+            font-family: 'Times New Roman', Times, serif;
+       }
+        ion-title, ion-segment {
+            font-family: 'Oswald', sans-serif;
+       }
+        .www, h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+       }
+        .input-label {
+            white-space: normal !important;
+            max-width: none !important;
+            width: 100%;
+       }
+        ion-list {
+            border-radius: 15px;
+            background-color: lightgoldenrodyellow;
+            font-size: 120%;
+       }
+        ion-col {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+       }
+        .col1 {
+            text-align: right;
+       }
+        #col1, #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+       }
+        p {
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 120%;
+       }
+        .a1 {
+            text-align: center;
+            margin-right:20px;
+       }
+        .a2 {
+            text-align: right;
+       }
+        .a3 {
+            text-align: center;
+       }
+        .a4 {
+            text-align: right;
+       }
+        .a5 {
+            font-size: 110%;
+            height: 10%;
+       }
+        .a6 {
+            margin-right: 200%;
+            height: 300%;
+            width: 300%;
+       }
+        .aa {
+            font-size: 110%;
+            margin-left: 1%;
+            margin-right: 2%;
+            margin-top: 1%;
+            width: 98%;
+            height: 5% 
+       }
+        .a7 {
+            margin-left: 1%;
+            margin-right: 2%;
+            margin-top: 2%;
+            width: 98%;
+       }
+        .roll {
+            width: -5%;
+       }
+        #col1, #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+       }
+        p {
+            color: white;
+            text-align: center;
+       }
+   }
+}

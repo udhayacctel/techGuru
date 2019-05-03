@@ -1,0 +1,65 @@
+.ios,
+.md {
+    dailydiary-select {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            font-size: 100%;
+        }
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+            color: black;
+        }
+        .www,
+        p,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+            color: black;
+        }
+       
+        #a1 {
+            text-align: center;
+            width: 30%;
+            margin-left: 30%;
+            border-radius: 30%;
+            color: white;
+        }
+        #col1,
+        #col2 {
+            text-align: center;
+            font-size: 120%;
+            color: white;
+        }
+
+        ion-card{
+
+            border-radius:10px;
+        }
+        @media all and (min-width:1281px) {
+            
+        ion-card {
+            max-width:50% !important;
+            margin-left:25% !important;
+        }
+        }
+        @media all and (min-width : 576px) and (max-width : 1024px)  { 
+            
+         ion-card {
+             max-width:60% !important;
+             margin-left:20% !important;
+             }
+            }
+                
+    }
+}

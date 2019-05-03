@@ -1,0 +1,36 @@
+<ion-header>
+    
+        <ion-navbar color="appheader" align-title="center">
+    
+            <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+            <ion-title>
+                {{parm_standard}}-{{parm_section}} {{current_date | date: 'dd/MMM'}}
+            </ion-title>
+    
+        </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content padding>
+    
+    
+        <ion-item no-lines>
+            <ion-label> <b>No</b> </ion-label>
+            <ion-label class="a1"> <b>Name</b> </ion-label>
+            <ion-label class="a2"> <b>Present</b> </ion-label>
+        </ion-item>
+        <ion-list no-lines paddin-left="10">
+            <ion-item no-lines *ngFor="let x of student_details">
+                <ion-label>{{x.student_roll_no}}</ion-label>
+                <ion-label>{{x.name}}</ion-label>
+                <ion-toggle toogle-class="toggle-balanced" [(ngModel)]="x.attendance" checked={{x.attendance}}> </ion-toggle>
+            </ion-item>
+        </ion-list>
+    
+        <div id="a1" align="middle">
+            <button (click)="submit()" ion-button secondary small>Submit</button>
+        </div>
+    
+    </ion-content>

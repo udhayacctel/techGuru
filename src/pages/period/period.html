@@ -1,0 +1,91 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+        <ion-title> Period  <br/>
+</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <br>
+
+    <ion-card id="ic">
+        <ion-item>
+            <ion-label fixed>Standard</ion-label>
+            <ion-select [(ngModel)]="selected_standard" (ionChange)="class_period()" interface="popover">
+                <ion-option *ngFor="let x of standard" value={{x.standard}}> Class - {{x.standard}} </ion-option>
+
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> Period</ion-label><br>
+            <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="c"> </ion-textarea>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Descr</ion-label><br>
+            <ion-textarea autocomplete="true" spellcheck="true" [(ngModel)]="d"> </ion-textarea>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> Start Time</ion-label>
+            <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+            <ion-datetime displayFormat="hh:mm:a" pickerFormat="hh:mm:a" [(ngModel)]="a"></ion-datetime>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> End Time</ion-label>
+            <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+            <ion-datetime displayFormat="hh:mm:a" pickerFormat="hh:mm:a" [(ngModel)]="b"></ion-datetime>
+
+        </ion-item>
+    </ion-card>
+    <div align="middle">
+    <button  ion-button color="secondary" (click)="save()"> Add </button>
+    </div>
+    <ion-card id="icperiod">
+
+
+        <ion-row class="padding-bottom" padding-left>
+            <ion-col><b>Class</b></ion-col>
+            <ion-col><b>Period</b></ion-col>
+            <ion-col><b>Start Time</b></ion-col>
+            <ion-col><b>End Time</b></ion-col>
+            <ion-col><b>Delete</b></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let i of classRefTimes" padding-left>
+            <ion-col class="align-bottom">{{i.standard}}</ion-col>
+            <ion-col class="align-bottom">{{i.period_type}}</ion-col>
+            <ion-col class="align-bottom">{{i.start_time}} </ion-col>
+            <ion-col class="align-bottom"> {{i.end_time}} </ion-col>
+            <ion-col class="align-bottom">
+                <button id="ibp" small clear (click)="removeperiod(i)">
+                        <ion-icon name="trash">
+                        </ion-icon>
+                    </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="co"><ion-icon color="lit" name="home" (click)="home()" align-left>
+    <br>Home</ion-icon></ion-col>
+</ion-row>  </ion-toolbar>
+</ion-footer>
+-->

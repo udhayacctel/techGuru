@@ -1,0 +1,147 @@
+.ios,
+.md {
+    home-page {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        button,
+        h3,
+        h4 {
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        .www,
+        p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 90%;
+            color: black;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+            //color: #0091d2;
+        }
+       
+        .tik {
+            position: relative;
+            bottom: -1px;
+            width: 14px;
+            height: 14px;
+        }
+        .dda {
+            line-height: 18px;
+            white-space: pre-line;
+            position: relative;
+            margin-left: 14px;
+        }
+        .select-icon,
+        .select-text {
+            display: none !important;
+            /* hidden triangle icon and selected text */
+        }
+        .hh {
+            color: white;
+           
+        }
+
+        .hs{
+
+            font-size: 80%;
+            font-weight: bold;
+        }
+
+        #filter {
+            color: cornflowerblue;
+        }
+       
+     /* .avt {
+            position: relative;
+            top:-14px; //4%;
+        }*/
+        h2 {
+            font-weight: bold;
+        }
+        #ava {
+            margin-top: 0;
+        
+        }
+        @media all and (min-width: 1281px) {
+            #ava {
+                width: 60%;
+                margin-left: 20%;
+            }
+        }
+        #adadgda {
+            margin: 20px 0;
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .col14 {
+            border-right: 1px solid white;
+        }
+        #col1,
+        #col2 {
+            text-align: center;
+            font-size: 120%;
+            color: white;
+        }
+        .row1 {
+            border-bottom: 1px solid white;
+        }
+        #ion1 {
+            height: 40px !important;
+        }
+        #i {
+            position: relative;
+            margin-top: 0%;
+        }
+        #ion2 {
+            height: 90px !important;
+            color: blue;
+        }
+    
+        h3,
+        h4 {
+            text-align: left;
+            color: blue;
+            padding-left: 20px;
+        }
+        ion-col {
+            text-align: center;
+            background-color:#4FC3F7; // #0d66f2; //cornflowerblue;
+            color: white;
+            border: 5px solid #4FC3F7; //cornflowerblue;
+            border-radius: 5px;
+        }
+        .animated {
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .zoomIn {
+            animation-name: zoomIn;
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .fadeInLeft {
+            animation-name: fadeInLeft;
+        }
+    }
+}

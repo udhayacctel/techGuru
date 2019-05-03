@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar color="appheader" align-title="center">
+
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+                Teacher Attendance
+        </ion-title>
+       
+   </ion-navbar>
+
+</ion-header>
+
+<ion-content padding><br/>
+ <ion-card>
+                <ion-item>
+                    <ion-label padding-left>Attendance </ion-label>
+                    <ion-icon item-right id="filter" ios="ios-funnel" md="md-funnel"></ion-icon>
+                    <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" pickerFormat="DD MM YYYY" (ionChange)="change(x)" [(ngModel)]="selected_viewdate"></ion-datetime>
+
+                </ion-item>
+            </ion-card><br/>
+            
+     <ion-card>
+    <ion-item no-lines>
+        <ion-label> <b>No</b> </ion-label>
+        <ion-label class="t1"> <b>Name</b> </ion-label>
+        <ion-label class="t2"> <b>Present</b> </ion-label>
+    </ion-item>
+    <ion-list no-lines paddin-left="10">
+        <ion-item no-lines *ngFor="let x of teacher">
+            <ion-label>{{x.teacher_number}}</ion-label>
+            <ion-label class="t3">{{x.name}}</ion-label>
+            <ion-toggle toogle-class="toggle-balanced" [(ngModel)]="x.attendance" checked={{x.attendance}}> </ion-toggle>
+        </ion-item>
+    </ion-list>
+     </ion-card>
+
+    <div align="middle">
+        <button (click)="submit()" ion-button secondary small >Submit</button>
+    </div>
+
+</ion-content>

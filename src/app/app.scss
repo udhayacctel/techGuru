@@ -1,0 +1,173 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.ios,.md{
+page-main{
+     @font-face{
+        font-family: Barrio;
+        src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,ion-select{font-family: 'Times New Roman', Times, serif;
+    font-size: 100%; }
+        button,h3 { font-family:'Times New Roman', Times, serif;} 
+        ion-title,ion-segment{font-family: 'Oswald', sans-serif;font-size: 120%;}
+        .www,p,h4{font-family: 'Oswald', sans-serif;font-size:120%;}
+
+    #head{
+
+padding: 0%;
+
+margin: 0%;
+
+ 
+
+    }
+
+   #ioc{
+       color: cornflowerblue;
+   }
+
+   
+
+    //background-color for toolbar
+
+   // .toolbar-background {
+
+  //background-color:lightblue;
+
+//}
+
+   //username
+
+    .use{ 
+
+      position: absolute;
+
+        margin-top:14%;
+
+        margin-left: 40%;
+
+    display:flex; 
+
+    color:white;
+
+    }
+
+    //Teacher/student/admin
+
+    #use1{ 
+
+      position: absolute;
+
+        margin-top:25%;
+
+        margin-left: 50%;
+
+       display:flex;
+
+    color:white;
+
+    }
+
+    //logout image
+
+    #img1{
+
+        position: absolute;
+
+        width:20px;
+
+        height: 20px;
+
+        margin-left:90%;
+
+    }
+
+    //user image
+
+    #img{
+
+        position: relative;
+
+        margin-top:5%;
+
+        margin-left: 0%;
+
+        width:90px;
+
+        height: 90px;
+
+        border-radius: 100px;
+
+    }
+
+    //logout button
+
+  #btt{
+
+      margin-left:40%;
+
+      width:40%;
+
+      
+
+  }
+#new{
+    color: black;
+    
+}
+  //alter try log out button
+
+/*#btt1{
+
+    position: absolute;
+
+    margin-top:27%;
+
+    height: 25px;
+
+    width:70px;
+
+    margin-left:40%;
+
+    color:white;border-radius: 10px;
+
+    background-color: #0F5BBD;
+
+ 
+
+}
+
+*/
+
+
+.ion-footer{
+    background-color: grey;
+}
+}
+.activeHighlight{
+
+    background-color: map-get($colors, admin );
+}
+ion-content {
+    background-color: $blue-background;
+    
+  }
+  h1, h2, h3, h4, h5, h6,
+  {
+   color: $blue-dark;
+ }
+}

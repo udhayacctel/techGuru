@@ -1,0 +1,37 @@
+<ion-header transparent>
+  <ion-navbar color="appheader">
+    <ion-title>Student Details</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card id="ics">
+   <ion-searchbar autocomplete="true" autocorrect="on" spellcheck="true" [(ngModel)]="searchTerm" 
+                    [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+ 
+  </ion-card>
+
+    <ion-card>
+    <ion-list *ngIf="showList">
+
+        <ion-item *ngFor="let item of student_search_results" (click)="submit(item)">
+           {{item.student_name}} ({{item.student_roll_no}})
+        </ion-item>
+       <div *ngIf="searching" class="spinner-container">
+            <ion-spinner></ion-spinner>
+        </div>
+
+    </ion-list>
+    </ion-card>
+
+<div align="middle">
+<button padding ion-button  color="secondary" (click)="student_add()">
+  Add
+</button>
+</div>     
+
+</ion-content>

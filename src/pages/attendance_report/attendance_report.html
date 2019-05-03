@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar  color="appheader" align-title="center">
+    <ion-title *ngIf="role=='T'">
+        <p  align="middle" (click)="doFilter()">{{selected_record}} <br>
+                   <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon></p>
+    </ion-title>       
+      
+
+    <ion-title *ngIf="role=='P'">
+         <p align="middle" (click)="openParent()">{{selected_record}} <br>
+                <ion-icon id="jj" ios="ios-arrow-down" md="md-arrow-dropdown"></ion-icon></p>
+    </ion-title>
+
+    <button ion-button menuToggle> 
+        <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-select #sectionSelect>
+  <ion-option *ngFor="let x of student"(ionSelect)="changerecord(x)">Roll No.{{x.student_roll_no}}-{{x.name}}</ion-option>
+</ion-select>
+
+<ion-select #parentSelect>
+         <ion-option *ngFor="let x of parent"(ionSelect)="changerecord(x)">{{x.parent_student_name}}</ion-option>
+</ion-select>
+
+<ion-content padding>
+        <ion-list> 
+      <ion-card>
+      <ion-item no-lines >
+        <ion-label color="primary" class="input-label"> Number of School Days  </ion-label>
+        <ion-label color="primary">{{no_present_days}}</ion-label>
+       </ion-item>
+      
+           <ion-item  no-lines>   
+           <ion-label color="primary" class="input-label"> Number of Days Absent  </ion-label>
+           <ion-label color="primary"> {{no_absent_days}}</ion-label>
+       </ion-item>
+    <!--  </ion-card> <br>
+         <ion-card>-->
+         <ion-grid fixed  id ="bar">    
+        <ion-row> <ion-col offset-25><ion-item no-lines><p id="mm"><b>Percentage</b></p></ion-item></ion-col>
+    <ion-col>
+    <div class="progress-outer">
+    <div class="progress-inner" [style.width]="attendance_percentage + '%'">
+        {{attendance_percentage}}%
+    </div>
+</div>
+    </ion-col>
+     </ion-row>
+         </ion-grid>
+    <!--     </ion-card><br>
+    <ion-card>-->
+
+       <ion-item no-lines>
+           <div align="middle">
+            <button ion-button small icon-right (click)="clicked()">
+                Leave Days
+            </button>
+           </div>
+       </ion-item> 
+    </ion-card>
+  </ion-list>
+
+
+       
+    <ion-list *ngIf="show">
+      
+      
+      <ion-card>
+     <ion-item class="a8" *ngFor= "let x of absent_info">
+       <ion-label class="www">{{x.date | date: 'dd/MMM'}}</ion-label>
+       <ion-label class="a3">{{x.day}}</ion-label>
+       <ion-label class="a4">{{x.attendance_check}}</ion-label>
+    </ion-item>
+    </ion-card>
+     </ion-list>
+</ion-content>

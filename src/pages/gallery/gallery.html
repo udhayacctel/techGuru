@@ -1,0 +1,57 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+        Gallery
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+         <ion-icon name="more"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+    </ion-header>
+
+  <ion-content>
+
+    <ion-segment [(ngModel)]="segment" (ionChange)="segselected()">
+
+        <ion-segment-button value="Images">  Images </ion-segment-button>
+
+        <ion-segment-button value="Videos"> Videos </ion-segment-button>
+
+    </ion-segment>
+    <div [ngSwitch]="segment">
+
+        <div *ngSwitchCase="'Images'">
+           <br/>               
+           <ion-card-header align="center" class="itg"> Upload Images       
+            <img class="gi"  src="assets/img/images.png" (click)="presentActionSheet()"/> 
+           </ion-card-header> 
+        <br/>
+                <ion-slides (ionSlideDidChange)="slideChanged()"  class="image-slider" loop="true">                   
+<ion-slide *ngFor="let c of schoolimage" >
+         <img [src]="c.url" class="thumb-img" (press)="delete(c)" imageViewer/>
+</ion-slide>
+</ion-slides>
+</div>
+
+<div *ngSwitchCase="'Videos'">
+      
+            <br/>
+            <ion-card-header align="center" class="itg"> Upload Videos   
+             <img class="gi"  src="assets/img/videos.png" (click)="ActionSheet()"/> 
+<!--<img class="gi"  src="assets/img/trash.png"/>  -->
+            </ion-card-header>
+         <ion-slides (ionSlideDidChange)="slideChanged()"  loop="true" >
+            <ion-slide >
+              <video type="video/mp4" #myvideo height="300" width="300" controls>           
+        <!-- <source [src]="" type="video/mp4" />-->
+         </video>
+            </ion-slide>
+         </ion-slides>
+        </div>
+        </div>
+        </ion-content>        

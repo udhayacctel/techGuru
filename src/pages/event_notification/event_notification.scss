@@ -1,0 +1,28 @@
+.ios,
+.md {
+    event-notification-page {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title  {
+            font-family: 'Oswald', sans-serif;
+        }
+        p,
+        {
+            font-family: 'Oswald', sans-serif;
+            font-size: 80%;
+        }
+        #evntnoti{
+            color: black;
+            
+        }
+        #eventnotify{
+            color: #0034a7;
+            font-weight: bold;
+        }
+    }
+}

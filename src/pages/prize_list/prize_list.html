@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title> Prize List</ion-title>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding><br>
+    <ion-card>
+        <ion-item>
+            <ion-label fixed>Activity</ion-label>
+            <ion-select [(ngModel)]="selected_activity" (ionChange)="select_activity()" interface="popover">
+                <ion-option>Club</ion-option>
+                <ion-option>House</ion-option>
+                <ion-option>Sports</ion-option>
+                <ion-option>Extra-Curricular Activities</ion-option>
+            </ion-select>
+        </ion-item><br>
+
+        <ion-item>
+            <ion-label fixed>Name</ion-label>
+            <ion-select [(ngModel)]="selected_event" (ionChange)="select_event()" interface="popover">
+                <ion-option *ngFor="let y of event">{{y.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <ion-item no-lines>
+            <ion-label class="a1"> <b>Name</b> </ion-label>
+            <ion-label class="a2"> <b>House</b> </ion-label>
+            <ion-label class="a3"> <b>Prize</b> </ion-label>
+
+        </ion-item>
+        <ion-list no-lines paddin-left="10">
+            <h3> {{this.header}} </h3>
+
+            <ion-item  no-lines *ngFor="let x of prize_list">
+                <ion-label class="prizelist">{{x.student_name}}</ion-label>
+                <ion-label class="prizelist" >{{x.name}}</ion-label>
+                <ion-label class="prizelist">{{x.prize}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>

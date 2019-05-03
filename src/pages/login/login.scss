@@ -1,0 +1,156 @@
+.ios,
+.md {
+    page-login {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-title {
+            font-family: 'Oswald', sans-serif;
+        }
+        #Ist {
+            color: black;
+            font-size: 120%;
+        }
+        h4 {
+            color: white;
+        }
+        @media all and (min-width: 1281px) and(min-width: 600px) {
+            h4 {
+                margin-left: -1%;
+            }
+        }
+        #wrap img {
+            width: 100%;
+        }
+        img {
+            height: auto !important;
+            width: auto !important;
+        }
+        h1 {
+            resize: both;
+        }
+        #ddd {
+         
+            opacity: 1;
+        }
+        .img1 {
+            resize: both !important;
+            height: 27vh !important; 
+            width: auto !important;
+            align-items: center;
+            border-radius: 32px;
+
+        }
+
+        .image {
+            max-width: 50%;
+            max-height: 50%;
+            padding-left: 10px;
+            margin-right: 5%;
+        }
+        #ccc {
+            text-align: center;
+        }
+        ion-spinner * {
+            width: 28px;
+            height: 28px;
+            stroke: #fff;
+            fill: #fff;
+        }
+        .hint {
+            color: red;
+            font-size: 80%;
+            text-align: center;
+        }
+        #nom {
+            color: black;
+            font-size:70%;
+            
+        }
+    
+        ion-footer {
+            border-radius: 10px;
+            position: relative;
+            background-color: darkblue;
+            color: white;
+        }
+        ion-label {
+            text-align: justify;
+        }
+        @media all and (min-width: 1281px){
+            #wit {
+                width: 377px;
+            }
+        }
+        @media all
+        and (width: 768px) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+
+            #wit {
+                width: 415px;
+            }
+
+        }
+        @media all
+        and (width: 1024px) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+
+            #wit {
+                width: 490px;
+            }
+
+        }
+       
+        @media all and (width : 600px) {
+
+            #wit {
+                width: 400px;
+            }
+            
+            }
+            
+        ion-icon {
+            color: black;
+        }
+        a {
+            color: black;
+        }
+        button {
+            text-align: center;
+            color: navy;
+            background-color: white;
+        }
+
+        #ilab{
+            font-size:70%;
+        }
+        #loginput{
+            font-size:70%;
+        }
+   
+        #a1 {
+            width: 10%;
+        }
+      
+      ion-item {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            font-size: 2em !important;
+            background-color: white;
+            text-align: center;
+        }
+        ion-grid {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+        }
+   
+        #err{
+
+           position: relative;
+           left: 30%;
+           text-align: center;
+        }
+    }
+}

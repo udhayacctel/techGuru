@@ -1,0 +1,98 @@
+.ios,
+.md {
+    attendance-selected {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+        }
+        #nnnn {
+            color: blue;
+        }
+        #ppp {
+            color: white;
+        }
+        .ccc {
+            border: 1px solid dodgerblue;
+            border-radius: 15px;
+            background-color: #B3E5FC;            ;//#E5F2F9;
+            font-size: 120%;
+            color: black;
+            width:90%;
+            margin-left:16px;
+           }
+        @media all and  (min-width: 1281px)  {
+            .ccc {
+                width: 60%;
+                margin-left: 20%;
+            }
+        }
+        @media all and (min-width : 576px) and (max-width : 1024px)  { 
+            .ccc {
+                width: 65%;
+                margin-left: 17%;
+            }
+        }
+        .asr{
+
+            background-color:#82B1FF;
+            color:white;
+        }
+        
+        .head {
+            background-color:white;
+        }
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        .a1 {
+            margin-left: 35%;
+        }
+
+         #as{
+
+            background-color:#EEEEEE;
+          
+         }
+        #buttn {
+          
+           width:40%;
+           text-align: center;
+           margin-left:30%;
+          
+        }
+        @media all and (min-width:1281px) {
+
+            #buttn {
+
+                width:18%;
+                text-align: center;
+                margin-left:40%;
+               
+               
+             } 
+        } 
+    }
+
+}

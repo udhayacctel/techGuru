@@ -1,0 +1,25 @@
+<ion-content style="background: url('assets/img/background.png') center; background-size: cover;">
+ <br><br>   
+<div align="middle"><img  src="assets/img/tech.png"></div> <br><br>
+<p class="psize" align="middle"> We have sent you an OTP to your Mobile Number</p><br>
+<p id="otpdig" align="middle">Enter 4-Digit Code</p>
+<ion-grid align="middle">
+        <ion-row> 
+          <ion-col>
+                <input id="partitioned" type="tel" [(ngModel)]="otpNo" maxlength="4"/>
+            </ion-col>
+        </ion-row>
+</ion-grid><br>
+     <div ion-col align="middle" >
+            <button class="o1" ion-button small (click)="Submit()">
+                Submit
+            </button>
+            <button class="o1" ion-button small (click)="Cancel()">
+                Cancel
+            </button>
+        </div>
+<br><br>
+<div align="middle">
+ <p class="psize">Didn't Receive the code?<a href="" id="rotp" color="#FFFFFF" (click)="Resend()">Resend</a></p>
+</div>  
+</ion-content>    

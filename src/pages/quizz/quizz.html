@@ -1,0 +1,110 @@
+<ion-header transparent>
+        <ion-navbar color="appheader" align-title="center">
+            <ion-title>Quiz select</ion-title>
+                <button ion-button menuToggle>
+                      <ion-icon name="menu"></ion-icon>
+               </button>
+        
+        </ion-navbar>
+      </ion-header>
+      <ion-content>
+            <form [formGroup]="form">
+            <ion-card>
+                    <ion-item>         
+                     <ion-label  fixed>Title</ion-label>                  
+                    <ion-textarea autocomplete="on" spellcheck="true" type="text" formControlName="selected_title"></ion-textarea> 
+                    </ion-item>
+                    <ion-item no-lines *ngIf="!form.controls.selected_title.valid &&
+                    (form.controls.selected_title.dirty )">
+                   <p id="quizz">*Enter your Title </p>
+                   </ion-item><br/>
+   
+                 <ion-item >
+                    <ion-label fixed>Descr</ion-label><br>
+                    <ion-textarea autocomplete="true" spellcheck="true" type="text" formControlName="selected_description"> </ion-textarea>
+                  </ion-item>
+                  <ion-item no-lines *ngIf="!form.controls.selected_description.valid &&
+                  (form.controls.selected_description.dirty )">
+                 <p id="quizz">*Enter your Description</p>
+                 </ion-item><br/>
+
+
+                <ion-item>
+                    <ion-label fixed>Quiz Type</ion-label>
+                    <ion-textarea  autocomplete="on" spellcheck="true" type="text"  formControlName="selected_quiz_type"></ion-textarea>                     
+                </ion-item>
+
+                <ion-item no-lines *ngIf="!form.controls.selected_quiz_type.valid &&
+                (form.controls.selected_quiz_type.dirty )">
+               <p id="quizz">*Enter your Quiz Type </p>
+               </ion-item><br/>
+                
+                   <!--<ion-item>
+            <ion-label fixed>Answer Type</ion-label>
+            <ion-select formControlName="selected_answer_type"  interface="popover">
+                    <ion-option>Multi Choice</ion-option>
+                    <ion-option>Fill in the blanks</ion-option>
+
+            </ion-select>
+        </ion-item>-->
+            <ion-item>
+               <ion-label fixed>Answer Type</ion-label>
+                 <ion-textarea  autocomplete="on" spellcheck="true" type="text"  formControlName="selected_answer_type"></ion-textarea>                     
+             </ion-item>
+
+         <ion-item no-lines *ngIf="!form.controls.selected_answer_type.valid &&
+                (form.controls.selected_answer_type.dirty )">
+               <p id="quizz">*Enter your Answer Type </p>
+               </ion-item><br/>
+ 
+                <ion-item>
+                    <ion-label fixed> Start Date</ion-label>
+                    <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                    <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-10-31" formControlName="selected_start_date"></ion-datetime>
+                    
+                </ion-item>
+                <ion-item no-lines *ngIf="(form.controls.selected_start_date.dirty && form.controls.selected_start_date.hasError('not a valid date'))">
+               <p id="quizz">Date should be greater than Today </p>
+               </ion-item><br>
+
+                <ion-item>
+                    <ion-label fixed> End Date</ion-label>
+                    <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                    <ion-datetime displayFormat="DD/MMM/YYYY" pickerFormat="DD MMM YYYY" min="2017" max="2018-10-31" formControlName="selected_end_date"></ion-datetime>
+                </ion-item>
+                <ion-item no-lines *ngIf="(form.controls.selected_end_date.valid && form.hasError('Less than'))">
+                 <p id="quizz">End Date Should be Greater than Start Date </p>
+                </ion-item><br/>
+               
+                <ion-item>
+                        <ion-label fixed>Dura Mins</ion-label><br>
+                       <!-- <ion-textarea autocomplete="true" spellcheck="true"  type="text" placeholder="00:00:00"  formControlName="selected_duration_mins"> </ion-textarea>-->  
+                        <ion-input autocomplete="true" spellcheck="true"  type="text" placeholder="00:00:00"  formControlName="selected_duration_mins"></ion-input>
+                    </ion-item>
+
+                <ion-item no-lines *ngIf="!form.controls.selected_duration_mins.valid &&
+                (form.controls.selected_duration_mins.dirty )">
+               <p id="quizz">*Please Enter Duration Mins</p>
+               </ion-item><br/>
+
+                <ion-item>
+                        <ion-label fixed>Max Attempts</ion-label>
+                        <ion-input type="number" max="10"  formControlName="selected_attempts_allowed"> </ion-input>           
+                </ion-item>    
+
+                <ion-item no-lines *ngIf="!form.controls.selected_attempts_allowed.valid &&
+                (form.controls.selected_attempts_allowed.dirty )">
+               <p id="quizz">*Please Enter Max Attempts </p>
+               </ion-item><br/>
+
+            </ion-card>
+            </form>
+            <ion-item>
+            <ion-label>Randomized</ion-label>
+            <ion-toggle item-right [(ngModel)]="question" (ionChange)="randomizeQuestions()" checked=false> </ion-toggle>
+        </ion-item>
+            <div align="middle">
+                <button  ion-button color="secondary" [disabled]="!form.valid"(click)="submit()">Submit</button>
+                </div>
+        
+      </ion-content>

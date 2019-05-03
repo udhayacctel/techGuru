@@ -1,0 +1,38 @@
+.ios, .md {
+    templates-page {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+       }
+        #adm {
+            padding: 4%;
+            color:white;
+            text-align: center;
+            background-color:#29B6F6;
+            //#2072B0;
+           // #F8F9F9;
+       }
+        .temp {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100;
+       }
+        #tmp{
+            border-radius: 10px;
+            background-color: #2072B0;
+           //#4FC3F7;
+           //#82B1FF;
+            color: white;
+       }
+        .padding-bottom {
+            background-color:#F8F9F9;
+            color:black;
+       }
+        #getmp{
+            color:white;
+            background-color: #29B6F6;
+       }
+        #tit{
+            color:white;
+       }
+   }
+}

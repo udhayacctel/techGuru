@@ -1,0 +1,61 @@
+<ion-header transparent>
+  <ion-navbar color="appheader" align-title="center">
+      <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+      <ion-title>
+          Templates
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button (click)="presentPopover($event)">
+       <ion-icon name="more"></ion-icon>
+    </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <!--  <ion-card id="tmp">
+                 
+              <ion-card-header  id="adm" stacked class="temp">Templates</ion-card-header>
+                  
+                  <ion-textarea autocomplete="true" spellcheck="true" rows="7" text-wrap [(ngModel)]="message"></ion-textarea>
+
+        </ion-card-->
+  <ion-card>
+      <ion-card-header id="adm" stacked class="temp">Templates</ion-card-header>
+
+      <ion-list>
+          <ion-item>
+              <ion-label fixed>Title</ion-label>
+              <ion-textarea autocomplete="true" spellcheck="true" rows="7" text-wrap [(ngModel)]="title"></ion-textarea>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>Message</ion-label>
+              <ion-textarea autocomplete="true" spellcheck="true" rows="7" text-wrap [(ngModel)]="message"></ion-textarea>
+          </ion-item>
+      </ion-list>
+  </ion-card>
+
+  <div align="middle">
+      <button ion-button color="secondary" (click)="save()">Add</button>
+  </div>
+  <br/>
+
+  <ion-card id="getmp">
+      <!-- <ion-card-header id="tit" align="middle">
+                     Templates
+                 </ion-card-header>-->
+      <ion-row class="padding-bottom">
+          <ion-col class="align-bottom">Title </ion-col>
+          <ion-col class="align-bottom">Message</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let t of temp">
+          <ion-col class="align-bottom">{{t.template_title}}</ion-col>
+          <ion-col class="align-bottom">{{t.template_message}}</ion-col>
+          <button item-right clear>
+                                   <ion-icon  ios="ios-trash" md="md-trash" (click)="delete(t)"></ion-icon>
+                                  </button>
+      </ion-row>
+  </ion-card>
+</ion-content>

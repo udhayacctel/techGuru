@@ -1,0 +1,47 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Notification</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+<ion-content padding><br/>
+    <ion-card>
+        <ion-item>
+            <ion-label class="www" stacked>Activity</ion-label>
+            <ion-select [(ngModel)]="selected_activity" (ionChange)="select_event()" interface="popover">
+                <ion-option>Club</ion-option>
+                <ion-option>Sports</ion-option>
+                <ion-option>House</ion-option>
+                <ion-option>Extra-Curricular Activities</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-card><br/>
+    <ion-card>
+
+        <ion-item>
+            <ion-label class="www" stacked>Title</ion-label>
+
+            <ion-select [(ngModel)]="selected_title">
+                <ion-option *ngFor="let t of event">{{t.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <br/>
+        <ion-item>
+            <ion-label class="www" stacked> Message </ion-label>
+
+            <ion-textarea [(ngModel)]="selected_message" autocomplete="on" spellcheck="true" type="text"></ion-textarea>
+
+        </ion-item>
+    </ion-card>
+    <div align="middle">
+        <button ion-button color="secondary" (click)="save()"> Send </button>
+    </div>
+</ion-content>

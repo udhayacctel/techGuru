@@ -1,0 +1,30 @@
+<ion-header transparent>
+  <ion-navbar color="appheader">
+    <ion-title>Teacher Details</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card id="ict">
+   <ion-searchbar autocomplete="true"  autocorrect="on" spellcheck="true" [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+  </ion-card>
+    
+  <ion-card>
+    <ion-list *ngIf="showList">
+        <ion-item *ngFor="let item of teacher_search_result" (click)="submit(item)">
+          {{item.name}} ({{item.teacher_number}})
+        </ion-item>
+        <div *ngIf="searching" class="spinner-container">
+            <ion-spinner></ion-spinner>
+        </div>
+    </ion-list >
+  </ion-card>
+  
+    <div align="middle">
+    <button  ion-button  color="secondary" (click)="teacher_add()">Add</button>
+    </div>
+
+</ion-content>

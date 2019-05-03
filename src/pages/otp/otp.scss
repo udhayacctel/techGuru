@@ -1,0 +1,46 @@
+.ios,
+.md {
+    page-otp {
+
+    
+    .o1{
+
+        background-color: white;
+        color: navy;
+    }
+    #rotp{
+        
+             color:white;
+             margin-left:6px;
+            }
+    #otpdig{
+         font-size: 85%;
+    }
+   
+    .psize{
+        font-size: 95%;
+    }
+    #partitioned:focus {
+                outline: none;
+                color: white;
+              }
+            
+    #partitioned {
+                   
+                   border: none;
+                   width: 5.95ch;
+                   background: 
+                         repeating-linear-gradient(90deg,
+                         black 0, 
+                         black 1ch, 
+                         transparent 0, 
+                         transparent 1.5ch) 
+                       0 100%/100% 2px no-repeat;
+                   color: black;
+                   font: 5ch consolas, monospace;
+                   letter-spacing: 0.5ch;                   
+                 
+                    }  
+
+                }              
+}

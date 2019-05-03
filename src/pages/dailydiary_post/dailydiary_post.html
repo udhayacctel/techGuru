@@ -1,0 +1,109 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>{{this.dairy_page_dailydiary.standard}} - {{this.dairy_page_dailydiary.section}} {{this.selected_to_date | date: 'dd/MMM'}}</ion-title>
+        <ion-buttons end>
+            <button  ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="dailyForm">
+        <ion-card id="dpc">
+        <ion-list no-lines radio-group formControlName="selected_activity">
+        
+            <ion-row>
+
+                <ion-col>
+                    <ion-item>
+                        <ion-radio value="H" checked></ion-radio>
+                        <ion-label>Home Work</ion-label>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col>
+                    <ion-item>
+                        <ion-label>Activity</ion-label>
+                        <ion-radio value="A"></ion-radio>
+                    </ion-item>
+                </ion-col>
+
+            </ion-row>
+        </ion-list>
+
+
+
+        <ion-item id="sub">
+            <ion-label class="www" stacked>Subject</ion-label>
+            <ion-select formControlName="selected_subject" interface="popover">
+                <ion-option *ngFor=" let x of daily_diary_subject">{{x.subject}}</ion-option>
+            </ion-select>
+        </ion-item><br>
+        <ion-item *ngIf=" dailyForm.controls.selected_subject.hasError('Enter subject') ">
+            <p id="mes">*Choose any Subject </p>
+        </ion-item><br/>
+
+
+
+        <ion-item id="mine">
+            <ion-label stacked class="www"> Title</ion-label>
+            <ion-textarea class="first" autocomplete="true" spellcheck="true" 
+                                formControlName="selected_title"> </ion-textarea>
+            <ion-select class="second" (ionChange)="selecttitle($event)">
+                    <ion-option  *ngFor="let t of temp" >{{t.template_title}}</ion-option>                                  
+                 </ion-select>              
+        </ion-item>
+        
+        <ion-item no-lines *ngIf="!dailyForm.controls.selected_title.valid &&
+                 (dailyForm.controls.selected_title.dirty )">
+            <p id="mes">*Enter your Title </p>
+        </ion-item><br/>
+
+        <ion-item id="mine">
+            <ion-label stacked class="www"> Message </ion-label>
+            <ion-textarea class="first"  autocomplete="true" spellcheck="true" formControlName="selected_message"></ion-textarea>
+            <ion-select  class="second"  (ionChange)="selectchange($event)">
+                    <ion-option *ngFor="let t of temp">{{t.template_message}}</ion-option>
+                </ion-select>         
+        </ion-item>
+
+        <ion-item no-lines *ngIf="!dailyForm.controls.selected_message.valid &&
+                 (dailyForm.controls.selected_message.dirty )">
+            <p id="mes"> *Enter your Message </p>
+        </ion-item><br/>
+
+
+        <ion-item id="a4">
+            <ion-label class="www" stacked>End Date
+
+                <ion-icon id="a1" ios="ios-calendar-outline" md="md-calendar"></ion-icon>
+
+                <!-- Advanced: explicity set the icon for each platform -->
+
+                <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" pickerFormat="DD MM YYYY"  formControlName="selected_to_date"></ion-datetime>
+            </ion-label>
+        </ion-item>
+
+        <ion-item no-lines *ngIf="(dailyForm.controls.selected_to_date.dirty
+                            && (dailyForm.controls.selected_to_date.hasError('Less than'))) ">
+            <p id="mes">*Date Should be Greater than Today </p>
+        </ion-item><br/>
+    </ion-card>
+        <div align="middle">
+        <button id="save" ion-button outline [disabled]="!dailyForm.valid" (click)="submit()">
+      Save 
+</button>
+</div>
+
+    </form>
+   
+</ion-content>
+
+<!--<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home"  (click)="home()" align-left><br>Home</ion-icon></ion-col>
+<ion-col id="col2" >  <ion-icon name="book" (click)="viewDiary()" ><br>View</ion-icon></ion-col></ion-row>  </ion-toolbar>
+</ion-footer>-->

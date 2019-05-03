@@ -1,0 +1,54 @@
+
+<ion-header>
+    
+        <ion-navbar color="appheader" align-title="center">
+    
+            <ion-title>
+                {{parm_standard}}-{{parm_section}} {{date | date: 'dd/MMM'}}
+            </ion-title>
+    
+    
+            <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+            <ion-buttons end>
+                <button ion-button (click)="presentPopover($event)">
+      <ion-icon name="more"></ion-icon>
+    </button>
+            </ion-buttons>
+    
+        </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content padding-top="5" class="head">
+        <h3>{{this.header}}</h3>
+        <ion-list id="asl">
+                <ion-card  *ngFor="let y of time_notification" id="as">
+                
+                    <ion-row class="asr">
+                   <ion-col align="middle"><br>Subject:</ion-col> 
+                   <ion-col><br>{{y.subject}}</ion-col>
+                    </ion-row>
+                  <ion-row  class="asr">
+                    <ion-col  align="middle"><br>Period:</ion-col>
+                    <ion-col><br>{{y.period}}</ion-col>    
+                  </ion-row> <br> 
+        
+        
+                    <ion-col> 
+                        <button  id="buttn" (click)="toggle(y)" ion-button small>Attendance<br> 
+                        </button>
+              
+                        </ion-col>
+        
+                   
+                </ion-card>
+                </ion-list>
+    </ion-content>
+    <!--
+    <ion-footer>
+      <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon (click)="home()" color="lit" name="home" align-left><br>Home</ion-icon></ion-col>
+    </ion-row>  </ion-toolbar>
+    </ion-footer>
+    -->

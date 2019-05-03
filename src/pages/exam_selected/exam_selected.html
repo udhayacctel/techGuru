@@ -1,0 +1,93 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>{{this.standard}} - {{this.exam_type}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="presentPopover($event)">
+  <ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding><br>
+    <form [formGroup]="examtimetable">
+        <ion-card>
+        <ion-item (click)="showview()" id="date">
+            <ion-label class="www" stacked>Date
+                <ion-icon ios="ios-calendar-outline" md="md-calendar"></ion-icon>
+
+                <ion-datetime displayFormat="DD/MMM/YYYY" min="2017" max="2018-12-31" pickerFormat="DD MM YYYY" formControlName="selected_from_date"></ion-datetime>
+            </ion-label>
+        </ion-item>
+
+
+
+        <ion-item no-lines *ngIf="!examtimetable.controls.selected_from_date.valid &&
+                 (examtimetable.controls.selected_from_date.dirty || submitAttempt)">
+            <p id="mes">*Should be Greater than Today </p>
+
+        </ion-item><br>
+
+        <ion-item id="date">
+            <ion-label class="www" stacked> From Time
+                <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                <ion-datetime displayFormat="hh:mm:a" pickerFormat="hh:mm:a" formControlName="selected_from_time"></ion-datetime>
+            </ion-label>
+        </ion-item>
+
+
+        <ion-item id="date">
+            <ion-label class="www" stacked> To Time
+                <ion-icon ios="ios-time-outline" md="md-time"></ion-icon>
+                <ion-datetime displayFormat="hh:mm:a" pickerFormat="hh:mm:a" formControlName="selected_to_time"></ion-datetime>
+            </ion-label>
+
+        </ion-item><br>
+
+        <ion-item *ngIf="!examtimetable.controls.selected_from_time.valid &&
+                 (examtimetable.controls.selected_from_time.dirty || submitAttempt)">
+            <p id="mes">Time Should be Valid </p>
+
+        </ion-item>
+
+        <ion-item id="sub">
+            <ion-label stacked class="www">Subject </ion-label>
+            <ion-select formControlName="selected_subject" interface="popover">
+                <ion-option *ngFor=" let n of subject_class" value={{n.subject_id}}>{{n.subject}}</ion-option>
+
+            </ion-select>
+        </ion-item><br>
+
+        <ion-item *ngIf="!examtimetable.controls.selected_subject.valid &&
+                  examtimetable.controls.selected_subject.dirty">
+            <p id="mes"> *Please Select the Subject </p>
+        </ion-item>
+
+        <ion-item id="sub">
+            <ion-label stacked class="www">Syllabus </ion-label>
+            <ion-input formControlName="selected_syllabus">
+
+
+            </ion-input>
+        </ion-item><br>
+
+        <ion-item *ngIf="!examtimetable.controls.selected_syllabus.valid &&
+                  examtimetable.controls.selected_syllabus.dirty">
+            <p id="mes"> *Please Enter the Syllabus </p>
+        </ion-item>
+        </ion-card>
+        <div align="middle">
+        <button id="save" ion-button outline [disabled]="!examtimetable.valid" (click)="save()">
+      Save </button>
+    </div>
+    </form>
+</ion-content>
+<!--
+<ion-footer>
+  <ion-toolbar color="appheader"><ion-row><ion-col id="col1"><ion-icon color="lit" name="home" (click)="home()" align-left><br>Home</ion-icon></ion-col>
+<ion-col id="col2" >  <ion-icon name="book" (click)="view()" ><br>View</ion-icon></ion-col></ion-row>  </ion-toolbar>
+</ion-footer>
+-->

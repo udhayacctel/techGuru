@@ -1,0 +1,30 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <ion-title>Parent Meeting</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="animated zoomIn">
+
+    <!--I am going to do Angular 2 coding to fetch the data from the database !-->
+    <ion-card>
+        <ion-item text-wrap class="animated bounceInUp">
+            <h2><b>Date</b></h2>{{parm_date}}
+            <br><br>
+            <h2> <b>Teacher Message:<br></b></h2>{{parm_teacher_message}}<br>
+            <br> <br>
+            <h2> <b>Parent Message:<br></b></h2>{{parm_student_message}}<br>
+            <br> <br>
+        </ion-item>
+        <div id="a2">
+            <button (click)="dismiss()" ion-button color="secondary" small >Close</button>
+        </div>
+    </ion-card>
+</ion-content>
+<!--
+ <ion-footer>
+  <ion-toolbar color="appheader"><ion-row>
+ <ion-col id="col1"><ion-icon  name="home" (click)="home()" align-left><br>Home</ion-icon></ion-col>
+
+</ion-row>  </ion-toolbar>
+</ion-footer>
+-->

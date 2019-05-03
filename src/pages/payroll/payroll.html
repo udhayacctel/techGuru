@@ -1,0 +1,28 @@
+<ion-header transparent>
+    <ion-navbar color="appheader" align-title="center">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+
+    </button>
+        <ion-title> PayRoll <br/>
+        </ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <br>
+    <ion-list>
+        <ion-item *ngFor="let x of payroll">
+            <ion-avatar item-start>
+             <img src="assets/img/credit.png">
+            </ion-avatar>
+
+            <h2> {{x.date}} </h2>
+            <p id="spr">Hello {{x.name}}, Your salary is credited on {{x.date}} </p>
+
+        </ion-item>
+    </ion-list>
+
+</ion-content>

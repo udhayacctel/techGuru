@@ -1,0 +1,91 @@
+.ios,
+.md {
+    notification-select {
+        @font-face {
+            font-family: Barrio;
+            src: url"(‘../assets/fonts/barrio.woff2’) format(‘woff2’)";
+        }
+        ion-option,
+        ion-select,
+        ion-datetime {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        button,
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ion-title,
+        ion-segment {
+            font-family: 'Oswald', sans-serif;
+        }
+        .www,
+        p,
+        h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 100%;
+        }
+        #a10 {
+            text-align: right;
+            width: 80%;
+        }
+        #a9 {
+            text-align: right;
+            width: 75%;
+        }
+        #btt1 {
+            margin-left: 75%;
+            font-size: 20px;
+        }
+        #mes {
+            color: red;
+            font-size: 80%;
+        }
+        #col1,
+        #col2 {
+            padding: 0;
+            text-align: center;
+            font-size: 90%;
+            color: white;
+        }
+        #sn{
+            text-align: center;
+            background-color: white;
+            color: navy;
+            
+        }
+        ion-card{
+            border-radius:15px;
+        }
+       /*  .second{
+
+             position:relative;
+             display: inline-block;
+             width: 4%;
+             margin-left: 92%;
+             bottom: 35%;
+         }
+         .first{
+
+                display: inline-block;
+                vertical-align: top;
+                line-height: 28px;
+         
+         }*/
+
+        .second{
+        // position:relative;
+           display: inline-block;
+           width: 10%;
+           margin-left: 90%;
+           bottom: 35%;
+         }
+         .first{
+          display: inline;
+          vertical-align: top;
+          line-height: 28px;
+          width: 90%;
+         }
+            
+    }
+}

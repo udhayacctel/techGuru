@@ -1,0 +1,64 @@
+<ion-header transparent>
+  <ion-navbar color="appheader" align-title="center">
+      <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+
+  </button>
+      <ion-title>Quiz Questions<br/>
+</ion-title>
+      <ion-buttons end>
+          <button ion-button (click)="presentPopover($event)">
+<ion-icon name="more"></ion-icon>
+</button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">        
+  <ion-card>
+    <ion-item >
+        <ion-label stacked>Question</ion-label>
+           <ion-textarea autocomplete="on" spellcheck="true" type="text" formControlName="question"></ion-textarea>
+      </ion-item> 
+  </ion-card> 
+   <br>
+
+<div formArrayName="items"  *ngFor="let item of form.get('items').controls; let i = index;" class="frw">
+     <div [formGroupName]="i">
+          <ion-item-divider  class="faid">Option {{ i + 1 }}</ion-item-divider>
+          <ion-item>                                    
+        <ion-input  type="text" maxlength="50" autocomplete="on" spellcheck="true" formControlName="options"></ion-input>
+        <ion-toggle  toogle-class="toggle-balanced" formControlName="isRightAnswer"></ion-toggle>       
+          </ion-item>
+      </div>
+      </div>
+      
+      <div align="middle">        
+      <div  style="color:black" ion-button  icon-left clear (click)="addItem()">
+      <ion-icon  color="secondary" name="add"></ion-icon>
+       Add 
+       </div>
+
+        <div style="color:black" ion-button icon-left clear (click)="remove()">
+          <ion-icon color="danger" name="close"></ion-icon>
+          Remove
+       </div>
+      </div>
+    
+  <ion-card>
+  <ion-item>
+      <ion-label stacked>Explanation</ion-label>
+         <ion-textarea autocomplete="on" spellcheck="true" type="text" formControlName="explanation"></ion-textarea>
+    </ion-item> 
+  </ion-card>
+  
+</form>
+<div align="center">
+  <button ion-button margin-top color="secondary" text-center
+  [disabled]="!form.valid"  (click)="onSubmit()">Submit</button>  
+  </div>
+
+</ion-content>
+
+
+

@@ -1,0 +1,47 @@
+<ion-header>
+    
+        <ion-navbar color="appheader" align-title="center">
+    
+            <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+            <ion-title>
+                Bus Attendance
+            </ion-title>
+    
+        </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content padding><br/>
+    
+        <ion-card>
+            <ion-item>
+                <ion-label>Route</ion-label>
+                <ion-select [(ngModel)]="selected_bus" interface="popover">
+                    <ion-option *ngFor=" let x of bus" (ionSelect)=change(x)> {{x.route}} </ion-option>
+    
+                </ion-select>
+            </ion-item><br>
+        </ion-card><br/>
+        <ion-card>
+            <ion-item no-lines>
+                <ion-label> <b>No</b> </ion-label>
+                <ion-label class="ba1"> <b>Name</b> </ion-label>
+                <ion-label class="ba2"> <b>Present</b> </ion-label>
+            </ion-item>
+    
+            <ion-list no-lines paddin-left="10">
+                <ion-item no-lines *ngFor="let x of student_list">
+                    <ion-label>{{x.student_roll_no}}</ion-label>
+                    <ion-label>{{x.name}}</ion-label>
+                    <ion-toggle toggle-class="toggle-balanced" [(ngModel)]="x.attendance" checked={{x.attendance}}> </ion-toggle>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+    
+        <div align="middle">
+            <button (click)="submit()" ion-button secondary small>Submit</button>
+        </div>
+    
+    </ion-content>
